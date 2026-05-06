@@ -97,13 +97,6 @@ export default function About() {
           ))}
         </div>
 
-        {/* 設立情報 */}
-        <p
-          className="text-xs"
-          style={{ color: "var(--veulr-text-muted)" }}
-        >
-          設立: 2026年5月5日 / 個人事業主（屋号: Veulr）
-        </p>
       </div>
     </section>
   );
