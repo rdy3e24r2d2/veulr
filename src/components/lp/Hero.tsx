@@ -1,4 +1,4 @@
-import HeroVisual from "./HeroVisual";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -75,9 +75,24 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 右カラム — atmospheric glow lives inside HeroVisual now. */}
+        {/* 右カラム */}
         <div className="relative flex items-center justify-center animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both [animation-delay:200ms]">
-          <HeroVisual />
+          <div
+            className="absolute inset-0 -z-10 rounded-3xl"
+            style={{
+              background:
+                "radial-gradient(circle at 60% 40%, oklch(0.55 0.22 280 / 20%) 0%, transparent 65%)",
+            }}
+            aria-hidden="true"
+          />
+          <Image
+            src="/images/hero-visual.png"
+            alt="人間の手と AI の手が触れ合う瞬間"
+            width={600}
+            height={560}
+            priority
+            className="w-full h-auto object-contain max-w-lg lg:max-w-full rounded-2xl"
+          />
         </div>
       </div>
     </section>
