@@ -5,6 +5,7 @@ const NAV_ITEMS = [
   { label: "Product", href: "#product" },
   { label: "Team", href: "#team" },
   { label: "特定商取引法に基づく表記", href: "/tokushoho", underline: true },
+  { label: "プライバシーポリシー", href: "/privacy", underline: true },
 ];
 
 export default function Footer() {
