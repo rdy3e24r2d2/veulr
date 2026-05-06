@@ -1,27 +1,26 @@
 import Image from "next/image";
-import { Layers, Sparkles, Zap, Users } from "lucide-react";
 
 const VALUES = [
   {
-    icon: Layers,
+    image: "/images/values/simple.jpg",
     title: "シンプル",
     description: "本質だけを残す。方程式のように少ない要素で大きな応用を作る。",
     color: "oklch(0.62 0.18 240)",
   },
   {
-    icon: Sparkles,
+    image: "/images/values/delight.jpg",
     title: "感動",
     description: '"満足" で止まらない。使い始めた瞬間に "すごい" と言わせる。',
     color: "oklch(0.70 0.18 330)",
   },
   {
-    icon: Zap,
+    image: "/images/values/speed.jpg",
     title: "スピード",
     description: "対応も改善も早く。顧客の時間を守り、時間を返す。",
     color: "oklch(0.78 0.14 80)",
   },
   {
-    icon: Users,
+    image: "/images/values/support.jpg",
     title: "伴走支援",
     description: "経営目線、現場の立場の両方の視点から改善する。",
     color: "oklch(0.70 0.14 160)",
@@ -81,10 +80,10 @@ export default function Values() {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
         style={{ borderTop: "1px solid oklch(0.84 0.012 258)" }}
       >
-        {VALUES.map(({ icon: Icon, title, description, color }, i) => (
+        {VALUES.map(({ image, title, description, color }, i) => (
           <div
             key={title}
-            className="px-8 py-12 space-y-5"
+            className="flex flex-col"
             style={{
               borderRight:
                 i < VALUES.length - 1
@@ -92,16 +91,25 @@ export default function Values() {
                   : undefined,
             }}
           >
-            <div
-              className="w-12 h-12 rounded-full flex items-center justify-center"
-              style={{
-                background: `${color}18`,
-                border: `1px solid ${color}44`,
-              }}
-            >
-              <Icon size={22} style={{ color }} />
+            {/* 抽象画像 */}
+            <div className="relative w-full h-40 overflow-hidden rounded-t-xl">
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+              {/* 下部グラデーション */}
+              <div
+                className="absolute inset-x-0 bottom-0 h-10"
+                style={{
+                  background: `linear-gradient(to top, ${color}33 0%, transparent 100%)`,
+                }}
+              />
             </div>
-            <div className="space-y-2">
+            {/* テキスト */}
+            <div className="px-8 py-8 space-y-2">
               <p
                 className="font-bold text-base"
                 style={{ color: "oklch(0.12 0.04 258)" }}
