@@ -32,7 +32,7 @@ export default function Values() {
   return (
     <section
       id="values"
-      style={{ background: "oklch(0.93 0.01 258)" }}
+      style={{ background: "oklch(0.87 0.012 258)" }}
     >
       {/* ビジュアルバナー */}
       <div className="relative h-48 lg:h-56 overflow-hidden">
@@ -48,14 +48,14 @@ export default function Values() {
           className="absolute inset-x-0 top-0 h-16"
           style={{
             background:
-              "linear-gradient(to bottom, oklch(0.93 0.01 258) 0%, transparent 100%)",
+              "linear-gradient(to bottom, oklch(0.87 0.012 258) 0%, transparent 100%)",
           }}
         />
         <div
           className="absolute inset-x-0 bottom-0 h-16"
           style={{
             background:
-              "linear-gradient(to top, oklch(0.93 0.01 258) 0%, transparent 100%)",
+              "linear-gradient(to top, oklch(0.87 0.012 258) 0%, transparent 100%)",
           }}
         />
       </div>

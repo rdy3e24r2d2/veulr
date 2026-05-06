@@ -28,7 +28,7 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      style={{ background: "oklch(0.93 0.01 258)" }}
+      style={{ background: "oklch(0.87 0.012 258)" }}
     >
       {/* 上段: 見出し + 写真 */}
       <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -69,7 +69,7 @@ export default function Problem() {
             className="absolute inset-0 hidden lg:block"
             style={{
               background:
-                "linear-gradient(to right, oklch(0.93 0.01 258) 0%, transparent 40%)",
+                "linear-gradient(to right, oklch(0.87 0.012 258) 0%, transparent 40%)",
             }}
           />
           {/* 下からフェード */}
@@ -77,7 +77,7 @@ export default function Problem() {
             className="absolute inset-x-0 bottom-0 h-24"
             style={{
               background:
-                "linear-gradient(to top, oklch(0.93 0.01 258) 0%, transparent 100%)",
+                "linear-gradient(to top, oklch(0.87 0.012 258) 0%, transparent 100%)",
             }}
           />
         </div>

@@ -29,7 +29,7 @@ export default function HowItWorks() {
     <section
       id="how"
       className="py-24 px-6"
-      style={{ background: "oklch(0.93 0.01 258)" }}
+      style={{ background: "oklch(0.87 0.012 258)" }}
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
