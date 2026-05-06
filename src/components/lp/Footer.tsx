@@ -49,7 +49,7 @@ export default function Footer() {
           className="text-xs"
           style={{ color: "var(--veulr-text-muted)" }}
         >
-          © 2026 Veulr. All rights reserved.
+          © 2026 VEULR. All rights reserved.
         </p>
       </div>
     </footer>

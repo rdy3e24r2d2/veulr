@@ -32,16 +32,7 @@ export default function Header() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="text-sm transition-colors duration-200"
-                style={{ color: "var(--veulr-text-secondary)" }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color =
-                    "var(--veulr-text-primary)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color =
-                    "var(--veulr-text-secondary)";
-                }}
+                className="text-sm transition-colors duration-200 text-[var(--veulr-text-secondary)] hover:text-[var(--veulr-text-primary)]"
               >
                 {item.label}
               </a>
