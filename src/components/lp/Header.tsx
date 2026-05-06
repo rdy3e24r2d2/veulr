@@ -41,7 +41,7 @@ export default function Header() {
         </ul>
 
         <a
-          href="mailto:info@veulr.com"
+          href="/contact"
           className="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
           style={{
             background: "var(--veulr-accent-primary)",
