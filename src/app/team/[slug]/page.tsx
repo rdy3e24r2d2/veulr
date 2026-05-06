@@ -223,6 +223,69 @@ export default async function TeamMemberPage({ params }: Props) {
             </div>
           </div>
 
+          {/* 趣味・関心 */}
+          <div className="space-y-4">
+            <p
+              className="text-xs tracking-[0.25em] uppercase font-medium"
+              style={{ color: member.color }}
+            >
+              Hobbies &amp; Interests
+            </p>
+            <ul className="space-y-2">
+              {member.hobbies.map((h) => (
+                <li
+                  key={h}
+                  className="flex items-start gap-3 text-sm"
+                  style={{ color: "var(--veulr-text-secondary)" }}
+                >
+                  <span
+                    className="mt-2 w-1 h-1 rounded-full flex-shrink-0"
+                    style={{ background: member.color }}
+                  />
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 休日の過ごし方 */}
+          <div
+            className="space-y-4 rounded-2xl p-6"
+            style={{ background: `${member.color}0a`, border: `1px solid ${member.color}22` }}
+          >
+            <p
+              className="text-xs tracking-[0.25em] uppercase font-medium"
+              style={{ color: member.color }}
+            >
+              Weekend
+            </p>
+            <p
+              className="text-sm leading-8"
+              style={{ color: "var(--veulr-text-secondary)" }}
+            >
+              {member.weekend}
+            </p>
+          </div>
+
+          {/* 最近気になっていること */}
+          <div className="space-y-4">
+            <p
+              className="text-xs tracking-[0.25em] uppercase font-medium"
+              style={{ color: member.color }}
+            >
+              Recently on my mind
+            </p>
+            <p
+              className="text-sm leading-8 border-l-2 pl-5"
+              style={{
+                color: "var(--veulr-text-secondary)",
+                borderColor: `${member.color}66`,
+              }}
+            >
+              {member.recentInterest}
+            </p>
+          </div>
+
           {/* チームに戻る */}
           <div
             className="pt-4"
