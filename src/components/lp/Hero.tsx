@@ -1,4 +1,4 @@
-import Image from "next/image";
+import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
   return (
@@ -75,24 +75,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 右カラム */}
+        {/* 右カラム — atmospheric glow lives inside HeroVisual now. */}
         <div className="relative flex items-center justify-center animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both [animation-delay:200ms]">
-          <div
-            className="absolute inset-0 -z-10 rounded-3xl"
-            style={{
-              background:
-                "radial-gradient(circle at 60% 40%, oklch(0.55 0.22 280 / 20%) 0%, transparent 65%)",
-            }}
-            aria-hidden="true"
-          />
-          <Image
-            src="/images/hero-concept.png"
-            alt="AI CEO ワイヤーフレームビジュアル"
-            width={600}
-            height={560}
-            priority
-            className="w-full h-auto object-contain max-w-lg lg:max-w-full"
-          />
+          <HeroVisual />
         </div>
       </div>
     </section>
