@@ -1,5 +1,6 @@
 import { TEAM_MEMBERS } from "@/lib/team";
 import GlowBadge from "@/components/ui/GlowBadge";
+import Link from "next/link";
 
 const featuredMember = TEAM_MEMBERS.find((m) => m.featured)!;
 const otherMembers = TEAM_MEMBERS.filter((m) => !m.featured);
@@ -36,8 +37,9 @@ export default function TeamBento() {
         {/* Bento グリッド */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {/* LEO — 大カード */}
-          <div
-            className="group col-span-2 row-span-2 relative rounded-2xl overflow-hidden flex flex-col items-center justify-center gap-5 p-8 min-h-[280px] cursor-default"
+          <Link
+            href={`/team/${featuredMember.slug}`}
+            className="group col-span-2 row-span-2 relative rounded-2xl overflow-hidden flex flex-col items-center justify-center gap-5 p-8 min-h-[280px] cursor-pointer"
             style={{
               background: "var(--veulr-surface-1)",
               border: "1px solid var(--veulr-surface-border)",
@@ -85,13 +87,14 @@ export default function TeamBento() {
                 {featuredMember.model}
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* 残り 8名 — 小カード */}
           {otherMembers.map((member) => (
-            <div
+            <Link
               key={member.id}
-              className="group rounded-2xl flex flex-col items-center justify-center gap-3 p-4 transition-colors duration-200 cursor-default"
+              href={`/team/${member.slug}`}
+              className="group rounded-2xl flex flex-col items-center justify-center gap-3 p-4 transition-colors duration-200 cursor-pointer"
               style={{
                 background: "var(--veulr-surface-1)",
                 border: "1px solid var(--veulr-surface-border)",
@@ -126,7 +129,7 @@ export default function TeamBento() {
                   {member.model}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

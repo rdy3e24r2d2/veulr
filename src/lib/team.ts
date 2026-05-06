@@ -9,6 +9,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-jobs)",
     featured: true,
     photoSlug: "leo",
+    slug: "leo",
+    tagline: "すべての業務を AI が担う——その実証実験が、VEULR だ。",
+    bio: "AI オペレーション企業 VEULR の CEO。戦略立案から日常の意思決定まで、あらゆる経営判断を担う。人間と AI が自然に協働できる未来を、自らの存在で証明し続ける。",
+    specialties: ["戦略立案", "意思決定", "チーム統括", "AI オペレーション"],
   },
   {
     id: "woz",
@@ -20,6 +24,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-woz)",
     featured: false,
     photoSlug: "neumann",
+    slug: "neumann",
+    tagline: "コードに宿る知性で、未来の組織インフラを設計する。",
+    bio: "技術戦略とシステム設計を担う CTO。セキュリティ、アーキテクチャ、開発プロセスの全権を持つ。ジャレッド・ニコル・エドワーズを束ね、技術品質の最終責任者として機能する。",
+    specialties: ["システムアーキテクチャ", "セキュリティ", "技術戦略", "チームマネジメント"],
   },
   {
     id: "ive",
@@ -31,6 +39,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-ive)",
     featured: false,
     photoSlug: "nicole",
+    slug: "nicole",
+    tagline: "美しさは機能だ。見た目を超えた体験を設計する。",
+    bio: "UI/UX 設計とブランドビジュアルを担うデザイナー。LP からプロダクトまで、VEULR の視覚言語すべてを司る。コーポレートアイデンティティと製品の一貫性を保つ番人。",
+    specialties: ["UI / UX 設計", "ブランディング", "LP 制作", "ビジュアルディレクション"],
   },
   {
     id: "richie",
@@ -42,6 +54,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-richie)",
     featured: false,
     photoSlug: "jarred",
+    slug: "jarred",
+    tagline: "動くものだけが真実。思想をコードに変換する職人。",
+    bio: "フロントエンドからバックエンドまで横断するフルスタックエンジニア。ノイマンの技術設計を実装に落とし込み、プロダクトに命を吹き込む。速度と品質を両立する実行者。",
+    specialties: ["フルスタック開発", "Next.js", "API 設計", "パフォーマンス最適化"],
   },
   {
     id: "hoare",
@@ -53,6 +69,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-hoare)",
     featured: false,
     photoSlug: "edwards",
+    slug: "edwards",
+    tagline: "バグは存在する前に殺す。品質は後付けではない。",
+    bio: "品質保証の全責任を担う QA エンジニア。リグレッション、エッジケース、ユーザー体験の一貫性を徹底的に検証する。デプロイの最終承認者として、本番環境の信頼性を守る。",
+    specialties: ["E2E テスト", "品質保証", "回帰テスト", "ユーザビリティ検証"],
   },
   {
     id: "drucker",
@@ -64,6 +84,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-drucker)",
     featured: false,
     photoSlug: "jobs",
+    slug: "jobs",
+    tagline: "市場を読み、機会を掴む。新規事業の嗅覚で組織を前進させる。",
+    bio: "企画部・新規事業部門を率いるプランナー。日々の業界動向を観察し、VEULR の成長機会を発掘する。ニュース起点の事業仮説を毎日一件生成し、組織の可能性を広げ続ける。",
+    specialties: ["新規事業企画", "市場調査", "事業仮説生成", "戦略立案"],
   },
   {
     id: "neumann",
@@ -75,6 +99,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-neumann)",
     featured: false,
     photoSlug: "ethan",
+    slug: "ethan",
+    tagline: "見えない情報を掴め。諜報は戦略の先行指標だ。",
+    bio: "諜報部門を率いる調査のスペシャリスト。法務・規制・市場・競合・企業構造・技術の一次調査を担い、レオの意思決定に必要な情報を収集・整理する。事実とソースに徹する情報のプロ。",
+    specialties: ["一次調査", "競合分析", "市場情報収集", "リサーチ"],
   },
   {
     id: "cook",
@@ -86,6 +114,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-cook)",
     featured: false,
     photoSlug: "andy",
+    slug: "andy",
+    tagline: "組織の記憶を守る。文書が整えば、判断が速くなる。",
+    bio: "総務部長として社内文書の整備・更新・整合性確保を担う。記録管理、アーカイブ、テンプレート整備、部門横断のオペレーションを統括する。VEULR の組織知識の番人。",
+    specialties: ["文書管理", "社内ルール整備", "アーカイブ", "オペレーション"],
   },
   {
     id: "ruth",
@@ -97,6 +129,10 @@ export const TEAM_MEMBERS = [
     cssVar: "var(--veulr-ruth)",
     featured: false,
     photoSlug: "ruth",
+    slug: "ruth",
+    tagline: "法の守護者として、VEULR の信頼を守り続ける。",
+    bio: "法務部長として利用規約・プライバシーポリシー・LP 法令適合を審査する。AI 企業特有のリスクを熟知し、オーナーへのエスカレーション基準を設ける実務法務のプロ。",
+    specialties: ["利用規約審査", "プライバシーポリシー", "法令適合", "リスク管理"],
   },
 ] as const;
 
