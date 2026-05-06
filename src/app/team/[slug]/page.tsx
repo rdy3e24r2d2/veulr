@@ -31,11 +31,43 @@ export default async function TeamMemberPage({ params }: Props) {
   return (
     <div style={{ background: "var(--veulr-surface-0)", minHeight: "100vh" }}>
 
-      {/* ── Hero: ビューポート全体 ── */}
-      <section className="relative min-h-screen flex flex-col lg:flex-row overflow-hidden">
+      {/* ── Hero ── */}
+      <section className="relative flex flex-col lg:flex-row lg:min-h-screen overflow-hidden">
 
-        {/* 左ペイン: テキスト */}
-        <div className="relative z-10 flex flex-col justify-between p-8 lg:p-16 lg:w-[52%] order-2 lg:order-1">
+        {/* 写真ペイン（モバイル: 上, デスクトップ: 右）*/}
+        <div className="relative w-full h-[72vw] min-h-[280px] lg:absolute lg:inset-y-0 lg:right-0 lg:w-[48%] lg:h-auto overflow-hidden order-1 lg:order-2">
+          <img
+            src={`/team/${member.photoSlug}_full.png`}
+            alt={member.nameEn}
+            className="w-full h-full object-cover object-top"
+          />
+          {/* デスクトップ: 左エッジブレンド */}
+          <div
+            className="absolute inset-0 z-10 hidden lg:block"
+            style={{
+              background:
+                "linear-gradient(to right, var(--veulr-surface-0) 0%, transparent 40%)",
+            }}
+          />
+          {/* 上端 */}
+          <div
+            className="absolute inset-x-0 top-0 h-20 z-10"
+            style={{ background: "linear-gradient(to bottom, var(--veulr-surface-0), transparent)" }}
+          />
+          {/* 下端フェード */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-28 z-10"
+            style={{ background: "linear-gradient(to top, var(--veulr-surface-0), transparent)" }}
+          />
+          {/* カラーグロー */}
+          <div
+            className="absolute inset-0 z-10 pointer-events-none"
+            style={{ background: `radial-gradient(ellipse at 60% 60%, ${member.color}22 0%, transparent 60%)` }}
+          />
+        </div>
+
+        {/* テキストペイン（モバイル: 下, デスクトップ: 左）*/}
+        <div className="relative z-10 w-full lg:w-[52%] flex flex-col gap-8 px-5 pt-6 pb-10 lg:px-16 lg:py-20 order-2 lg:order-1">
 
           {/* 戻るリンク */}
           <Link
@@ -47,14 +79,14 @@ export default async function TeamMemberPage({ params }: Props) {
           </Link>
 
           {/* メイン情報 */}
-          <div className="space-y-7 py-16 lg:py-0">
+          <div className="space-y-5">
             <GlowBadge color={member.color} size="md">{member.role}</GlowBadge>
 
-            {/* 英語名（大見出し）*/}
+            {/* 英語名 */}
             <h1
               className="font-bold leading-none tracking-tighter"
               style={{
-                fontSize: "clamp(3rem, 8vw, 6rem)",
+                fontSize: "clamp(2.2rem, 8vw, 6rem)",
                 color: "var(--veulr-text-primary)",
               }}
             >
@@ -62,9 +94,9 @@ export default async function TeamMemberPage({ params }: Props) {
             </h1>
 
             {/* 日本語名 + モデル */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3">
               <span
-                className="text-xl font-medium tracking-widest"
+                className="text-lg font-medium tracking-widest"
                 style={{ color: "var(--veulr-text-secondary)" }}
               >
                 {member.name}
@@ -83,7 +115,7 @@ export default async function TeamMemberPage({ params }: Props) {
 
             {/* タグライン */}
             <p
-              className="text-lg leading-relaxed max-w-md border-l-2 pl-5"
+              className="text-base leading-relaxed max-w-md border-l-2 pl-4"
               style={{
                 color: "var(--veulr-text-secondary)",
                 borderColor: member.color,
@@ -95,12 +127,12 @@ export default async function TeamMemberPage({ params }: Props) {
           </div>
 
           {/* Prev / Next ナビ */}
-          <nav className="flex justify-between items-center">
+          <nav className="flex justify-between items-center pt-2">
             {prev ? (
               <Link
                 href={`/team/${prev.slug}`}
                 style={{ color: "var(--veulr-text-muted)" }}
-                className="text-sm hover:text-white transition-colors"
+                className="text-sm hover:text-white transition-colors py-2 pr-4"
               >
                 ← {prev.nameEn}
               </Link>
@@ -111,7 +143,7 @@ export default async function TeamMemberPage({ params }: Props) {
               <Link
                 href={`/team/${next.slug}`}
                 style={{ color: "var(--veulr-text-muted)" }}
-                className="text-sm hover:text-white transition-colors"
+                className="text-sm hover:text-white transition-colors py-2 pl-4"
               >
                 {next.nameEn} →
               </Link>
@@ -120,67 +152,14 @@ export default async function TeamMemberPage({ params }: Props) {
             )}
           </nav>
         </div>
-
-        {/* 右ペイン: 全身写真 */}
-        <div className="relative lg:w-[48%] h-[70vw] lg:h-auto order-1 lg:order-2 overflow-hidden">
-          <img
-            src={`/team/${member.photoSlug}_full.png`}
-            alt={member.nameEn}
-            className="w-full h-full object-cover object-top"
-          />
-
-          {/* 左から暗く（デスクトップ: テキストペインへのブレンド）*/}
-          <div
-            className="absolute inset-0 z-10 hidden lg:block"
-            style={{
-              background:
-                "linear-gradient(to right, var(--veulr-surface-0) 0%, oklch(0.06 0.01 260 / 30%) 30%, transparent 55%)",
-            }}
-          />
-
-          {/* 上端を暗く */}
-          <div
-            className="absolute inset-x-0 top-0 h-24 z-10"
-            style={{
-              background:
-                "linear-gradient(to bottom, var(--veulr-surface-0) 0%, transparent 100%)",
-            }}
-          />
-
-          {/* 下端を暗く（bio セクションへのフェード）*/}
-          <div
-            className="absolute inset-x-0 bottom-0 h-40 z-10"
-            style={{
-              background:
-                "linear-gradient(to top, var(--veulr-surface-0) 0%, transparent 100%)",
-            }}
-          />
-
-          {/* スマホ: 下から暗く（テキストペインとの境界）*/}
-          <div
-            className="absolute inset-x-0 bottom-0 h-24 z-10 lg:hidden"
-            style={{
-              background:
-                "linear-gradient(to top, var(--veulr-surface-0) 0%, transparent 100%)",
-            }}
-          />
-
-          {/* メンバーカラーのアンビエントグロー */}
-          <div
-            className="absolute inset-0 z-10 pointer-events-none"
-            style={{
-              background: `radial-gradient(ellipse at 60% 60%, ${member.color}22 0%, transparent 60%)`,
-            }}
-          />
-        </div>
       </section>
 
       {/* ── Bio セクション ── */}
       <section
-        className="py-24 px-6"
+        className="py-12 px-5 lg:py-24 lg:px-6"
         style={{ borderTop: `1px solid ${member.color}33` }}
       >
-        <div className="max-w-2xl mx-auto space-y-14">
+        <div className="max-w-2xl mx-auto space-y-10 lg:space-y-14">
 
           {/* バイオ */}
           <div className="space-y-4">
