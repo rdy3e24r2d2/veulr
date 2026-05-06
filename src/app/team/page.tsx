@@ -42,46 +42,75 @@ export default function TeamPage() {
             <Link
               key={member.id}
               href={`/team/${member.slug}`}
-              className="group relative rounded-2xl overflow-hidden block"
+              className="group relative rounded-2xl overflow-hidden block transition-transform duration-300 hover:-translate-y-1"
               style={{
                 background: "var(--veulr-surface-1)",
                 border: "1px solid var(--veulr-surface-border)",
               }}
             >
-              {/* 写真: バスト→フル ホバー切替 */}
+              {/* 写真エリア */}
               <div className="relative overflow-hidden h-72">
+                {/* bust → full ホバー切替 */}
                 <img
-                  src={`/team/${member.photoSlug}_bust.jpg`}
+                  src={`/team/${member.photoSlug}_bust.png`}
                   alt={member.nameEn}
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 opacity-100 group-hover:opacity-0"
                 />
                 <img
-                  src={`/team/${member.photoSlug}_full.jpg`}
+                  src={`/team/${member.photoSlug}_full.png`}
                   alt={`${member.nameEn} full`}
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                 />
-                {/* グラデーション（下部テキスト読みやすく） */}
+
+                {/* 上部グラデーション — 明るい写真背景を暗く */}
                 <div
-                  className="absolute bottom-0 left-0 right-0 h-24"
+                  className="absolute inset-x-0 top-0 h-16 z-10"
                   style={{
                     background:
-                      "linear-gradient(to top, var(--veulr-surface-1), transparent)",
+                      "linear-gradient(to bottom, oklch(0.08 0.01 260 / 60%), transparent)",
                   }}
                 />
+
+                {/* 下部グラデーション — テキスト領域へのフェード */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-28 z-10"
+                  style={{
+                    background:
+                      "linear-gradient(to top, var(--veulr-surface-1) 0%, var(--veulr-surface-1) 20%, transparent 100%)",
+                  }}
+                />
+
+                {/* メンバーカラーのほのかなグロー */}
+                <div
+                  className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: `radial-gradient(ellipse at 50% 100%, ${member.color}33 0%, transparent 65%)`,
+                  }}
+                />
+
+                {/* ロール バッジ（写真の右上） */}
+                <div className="absolute top-3 right-3 z-20">
+                  <GlowBadge color={member.color} size="sm">
+                    {member.role}
+                  </GlowBadge>
+                </div>
               </div>
 
               {/* テキスト */}
-              <div className="p-6 space-y-3">
-                <div className="flex items-center justify-between">
+              <div className="px-6 pb-6 pt-2 space-y-2">
+                <div className="space-y-0.5">
                   <p
-                    className="font-bold text-lg tracking-[0.1em]"
+                    className="font-bold text-lg tracking-[0.08em]"
                     style={{ color: "var(--veulr-text-primary)" }}
                   >
                     {member.nameEn}
                   </p>
-                  <GlowBadge color={member.color} size="sm">
-                    {member.role}
-                  </GlowBadge>
+                  <p
+                    className="text-xs tracking-wider"
+                    style={{ color: "var(--veulr-text-muted)" }}
+                  >
+                    {member.name} · {member.model}
+                  </p>
                 </div>
                 <p
                   className="text-sm leading-6 line-clamp-2"
