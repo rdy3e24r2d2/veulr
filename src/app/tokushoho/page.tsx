@@ -33,7 +33,7 @@ const ITEMS = [
   },
   {
     term: "商品の販売価格",
-    description: "月額 ¥3,000〜（税込）",
+    description: "月額 ¥980〜（税込）",
   },
   {
     term: "代金の支払い時期",

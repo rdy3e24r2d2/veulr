@@ -4,7 +4,7 @@ const FEATURES = [
   { text: "自然言語で検索" },
   { text: "複数ソース対応" },
   { text: "チーム共有" },
-  { text: "月額 ¥3,000〜" },
+  { text: "月額 ¥980〜" },
 ];
 
 const MOCK_RESULTS = [
@@ -80,7 +80,7 @@ export default function Product() {
                 className="text-3xl font-bold"
                 style={{ color: "var(--veulr-text-primary)" }}
               >
-                ¥3,000
+                ¥980
               </span>
               <span
                 className="text-sm ml-1"
@@ -90,7 +90,7 @@ export default function Product() {
               </span>
             </p>
             <a
-              href="https://file-search-system-production.up.railway.app"
+              href="https://documentfinder.jp"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-9 px-5 rounded-lg text-sm font-medium transition-opacity duration-200 hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
