@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Layers, Sparkles, Zap, Users } from "lucide-react";
 
 const VALUES = [
@@ -31,63 +32,91 @@ export default function Values() {
   return (
     <section
       id="values"
-      className="py-24 px-6"
       style={{ background: "var(--veulr-surface-1)" }}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p
-            className="text-sm tracking-[0.2em] uppercase font-medium mb-4"
-            style={{ color: "var(--veulr-accent-primary)" }}
-          >
-            Values
-          </p>
-          <h2
-            className="text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-bold"
-            style={{ color: "var(--veulr-text-primary)" }}
-          >
-            Veulr Values
-          </h2>
-        </div>
+      {/* ビジュアルバナー */}
+      <div className="relative h-48 lg:h-56 overflow-hidden">
+        <Image
+          src="/images/values-visual.png"
+          alt="チームのシルエット"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* 上下グラデーション */}
+        <div
+          className="absolute inset-x-0 top-0 h-16"
+          style={{
+            background:
+              "linear-gradient(to bottom, var(--veulr-surface-1) 0%, transparent 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-16"
+          style={{
+            background:
+              "linear-gradient(to top, var(--veulr-surface-1) 0%, transparent 100%)",
+          }}
+        />
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {VALUES.map(({ icon: Icon, title, description, color }) => (
+      {/* ヘッダー */}
+      <div className="text-center py-12 px-6">
+        <p
+          className="text-xs tracking-[0.3em] uppercase font-medium mb-3"
+          style={{ color: "var(--veulr-accent-primary)" }}
+        >
+          Values
+        </p>
+        <h2
+          className="text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-bold"
+          style={{ color: "var(--veulr-text-primary)" }}
+        >
+          Veulr Values
+        </h2>
+      </div>
+
+      {/* 4カード — ボーダーグリッド */}
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        style={{ borderTop: "1px solid var(--veulr-surface-border)" }}
+      >
+        {VALUES.map(({ icon: Icon, title, description, color }, i) => (
+          <div
+            key={title}
+            className="px-8 py-12 space-y-5"
+            style={{
+              borderRight:
+                i < VALUES.length - 1
+                  ? "1px solid var(--veulr-surface-border)"
+                  : undefined,
+            }}
+          >
             <div
-              key={title}
-              className="rounded-2xl p-6 space-y-5"
+              className="w-12 h-12 rounded-full flex items-center justify-center"
               style={{
-                background: "var(--veulr-surface-2)",
-                border: "1px solid var(--veulr-surface-border)",
+                background: `${color}20`,
+                border: `1px solid ${color}44`,
               }}
             >
-              {/* カラー付き丸アイコン */}
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center"
-                style={{
-                  background: `${color}20`,
-                  border: `1px solid ${color}44`,
-                }}
-              >
-                <Icon size={22} style={{ color }} />
-              </div>
-
-              <div className="space-y-2">
-                <p
-                  className="font-bold text-base"
-                  style={{ color: "var(--veulr-text-primary)" }}
-                >
-                  {title}
-                </p>
-                <p
-                  className="text-xs leading-5"
-                  style={{ color: "var(--veulr-text-secondary)" }}
-                >
-                  {description}
-                </p>
-              </div>
+              <Icon size={22} style={{ color }} />
             </div>
-          ))}
-        </div>
+            <div className="space-y-2">
+              <p
+                className="font-bold text-base"
+                style={{ color: "var(--veulr-text-primary)" }}
+              >
+                {title}
+              </p>
+              <p
+                className="text-xs leading-5"
+                style={{ color: "var(--veulr-text-secondary)" }}
+              >
+                {description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

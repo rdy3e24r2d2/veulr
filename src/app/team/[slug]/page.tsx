@@ -39,7 +39,7 @@ export default async function TeamMemberPage({ params }: Props) {
 
           {/* 戻るリンク */}
           <Link
-            href="/team"
+            href="/#team"
             className="text-xs tracking-[0.2em] uppercase hover:text-white transition-colors self-start"
             style={{ color: "var(--veulr-text-muted)" }}
           >
@@ -229,7 +229,7 @@ export default async function TeamMemberPage({ params }: Props) {
             style={{ borderTop: "1px solid var(--veulr-surface-border)" }}
           >
             <Link
-              href="/team"
+              href="/#team"
               className="text-sm tracking-[0.15em] uppercase hover:text-white transition-colors"
               style={{ color: "var(--veulr-text-muted)" }}
             >

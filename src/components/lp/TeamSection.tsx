@@ -1,5 +1,6 @@
 import { TEAM_MEMBERS } from "@/lib/team";
 import Link from "next/link";
+import GlowBadge from "@/components/ui/GlowBadge";
 
 export default function TeamSection() {
   return (
@@ -9,7 +10,8 @@ export default function TeamSection() {
       style={{ background: "var(--veulr-surface-0)" }}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
+        {/* ヘッダー */}
+        <div className="text-center mb-16">
           <p
             className="text-sm tracking-[0.2em] uppercase font-medium mb-4"
             style={{ color: "var(--veulr-accent-primary)" }}
@@ -31,56 +33,84 @@ export default function TeamSection() {
           </p>
         </div>
 
-        {/* 横スクロール対応の1列 */}
-        <div className="overflow-x-auto pb-4 -mx-6 px-6">
-          <div className="flex gap-6 min-w-max mx-auto justify-center">
-            {TEAM_MEMBERS.map((member) => (
-              <Link
-                key={member.id}
-                href={`/team/${member.slug}`}
-                className="group flex flex-col items-center gap-3 w-24 flex-shrink-0"
-              >
-                {/* 正円クロップ写真 */}
+        {/* 3×3 グリッド */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {TEAM_MEMBERS.map((member) => (
+            <Link
+              key={member.id}
+              href={`/team/${member.slug}`}
+              className="group relative rounded-2xl overflow-hidden block transition-transform duration-300 hover:-translate-y-1"
+              style={{
+                background: "var(--veulr-surface-1)",
+                border: "1px solid var(--veulr-surface-border)",
+              }}
+            >
+              {/* 写真エリア */}
+              <div className="relative overflow-hidden h-64">
+                <img
+                  src={`/team/${member.photoSlug}_bust.png`}
+                  alt={member.nameEn}
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+                />
+                <img
+                  src={`/team/${member.photoSlug}_full.png`}
+                  alt={`${member.nameEn} full`}
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+                />
+                {/* 上部暗化 */}
                 <div
-                  className="w-20 h-20 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-[var(--veulr-accent-primary)] transition-all duration-300 flex-shrink-0"
-                  style={{ border: "2px solid var(--veulr-surface-border)" }}
-                >
-                  <img
-                    src={`/team/${member.photoSlug}_bust.png`}
-                    alt={member.nameEn}
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-
-                {/* テキスト */}
-                <div className="text-center space-y-0.5">
-                  <p
-                    className="text-xs font-semibold tracking-wide"
-                    style={{ color: "var(--veulr-text-primary)" }}
-                  >
-                    {member.name}
-                  </p>
-                  <p
-                    className="text-[10px]"
-                    style={{ color: "var(--veulr-text-muted)" }}
-                  >
+                  className="absolute inset-x-0 top-0 h-12 z-10"
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, oklch(0.08 0.01 260 / 50%), transparent)",
+                  }}
+                />
+                {/* 下部フェード */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-24 z-10"
+                  style={{
+                    background:
+                      "linear-gradient(to top, var(--veulr-surface-1) 0%, var(--veulr-surface-1) 10%, transparent 100%)",
+                  }}
+                />
+                {/* ホバー時メンバーカラーグロー */}
+                <div
+                  className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: `radial-gradient(ellipse at 50% 100%, ${member.color}33 0%, transparent 65%)`,
+                  }}
+                />
+                {/* ロールバッジ */}
+                <div className="absolute top-3 right-3 z-20">
+                  <GlowBadge color={member.color} size="sm">
                     {member.role}
-                  </p>
+                  </GlowBadge>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </div>
+              </div>
 
-        {/* チーム一覧リンク */}
-        <div className="text-center mt-10">
-          <Link
-            href="/team"
-            className="text-sm tracking-[0.1em] hover:text-white transition-colors"
-            style={{ color: "var(--veulr-text-muted)" }}
-          >
-            メンバー紹介を見る →
-          </Link>
+              {/* テキスト */}
+              <div className="px-5 pb-5 pt-2 space-y-1.5">
+                <p
+                  className="font-bold text-base tracking-[0.06em]"
+                  style={{ color: "var(--veulr-text-primary)" }}
+                >
+                  {member.nameEn}
+                </p>
+                <p
+                  className="text-xs tracking-wider"
+                  style={{ color: "var(--veulr-text-muted)" }}
+                >
+                  {member.name} · {member.model}
+                </p>
+                <p
+                  className="text-xs leading-5 line-clamp-2"
+                  style={{ color: "var(--veulr-text-secondary)" }}
+                >
+                  {member.tagline}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

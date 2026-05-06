@@ -1,15 +1,17 @@
+import Image from "next/image";
+
 export default function MVV() {
   return (
     <section style={{ background: "var(--veulr-surface-0)" }}>
 
-      {/* ── Mission / Vision 横並び ── */}
+      {/* ── Mission ── */}
       <div
         className="grid grid-cols-1 lg:grid-cols-2"
         style={{ borderBottom: "1px solid var(--veulr-surface-border)" }}
       >
-        {/* Mission */}
+        {/* テキスト */}
         <div
-          className="px-10 py-20 lg:px-16 lg:py-24 space-y-6"
+          className="flex flex-col justify-center px-10 py-20 lg:px-16 lg:py-28 space-y-6 order-2 lg:order-1"
           id="mission"
           style={{ borderRight: "1px solid var(--veulr-surface-border)" }}
         >
@@ -39,11 +41,70 @@ export default function MVV() {
           </p>
         </div>
 
-        {/* Vision */}
+        {/* 写真 */}
+        <div className="relative h-72 lg:h-auto min-h-[360px] order-1 lg:order-2 overflow-hidden">
+          <Image
+            src="/mvv/mission.png"
+            alt="Mission — AI で生活をもっと便利に"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+          <div
+            className="absolute inset-0 hidden lg:block"
+            style={{
+              background:
+                "linear-gradient(to right, var(--veulr-surface-0) 0%, transparent 45%)",
+            }}
+          />
+          <div
+            className="absolute inset-x-0 bottom-0 h-20"
+            style={{
+              background:
+                "linear-gradient(to top, var(--veulr-surface-0) 0%, transparent 100%)",
+            }}
+          />
+        </div>
+      </div>
+
+      {/* ── Vision ── */}
+      <div
+        className="grid grid-cols-1 lg:grid-cols-2"
+        style={{ borderBottom: "1px solid var(--veulr-surface-border)" }}
+      >
+        {/* 写真 */}
+        <div className="relative h-72 lg:h-auto min-h-[360px] overflow-hidden">
+          <Image
+            src="/mvv/vision.png"
+            alt="Vision — AI が身近に居る世界へ"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+          <div
+            className="absolute inset-0 hidden lg:block"
+            style={{
+              background:
+                "linear-gradient(to left, var(--veulr-surface-1) 0%, transparent 45%)",
+            }}
+          />
+          <div
+            className="absolute inset-x-0 bottom-0 h-20"
+            style={{
+              background:
+                "linear-gradient(to top, var(--veulr-surface-1) 0%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        {/* テキスト */}
         <div
-          className="px-10 py-20 lg:px-16 lg:py-24 space-y-6"
+          className="flex flex-col justify-center px-10 py-20 lg:px-16 lg:py-28 space-y-6"
           id="vision"
-          style={{ background: "var(--veulr-surface-1)" }}
+          style={{
+            background: "var(--veulr-surface-1)",
+            borderLeft: "1px solid var(--veulr-surface-border)",
+          }}
         >
           <p
             className="text-xs tracking-[0.3em] uppercase font-medium"
