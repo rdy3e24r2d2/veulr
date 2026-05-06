@@ -58,7 +58,7 @@ export default function Problem() {
         {/* 右: 写真 */}
         <div className="relative h-72 lg:h-auto min-h-[320px] overflow-hidden">
           <Image
-            src="/images/problem.png"
+            src="/images/problem.jpg"
             alt="書類に埋もれるオフィスワーカー"
             fill
             className="object-cover object-center"

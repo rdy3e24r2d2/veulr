@@ -38,7 +38,7 @@ export default function Product() {
       {/* ライフスタイル写真 — 上部フルワイド */}
       <div className="relative h-64 lg:h-80 overflow-hidden">
         <Image
-          src="/images/product-lifestyle.png"
+          src="/images/product-lifestyle.jpg"
           alt="Document Finder を使う様子"
           fill
           className="object-cover object-center"

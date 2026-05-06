@@ -124,7 +124,7 @@ export default async function TeamMemberPage({ params }: Props) {
         {/* 右ペイン: 全身写真 */}
         <div className="relative lg:w-[48%] h-[70vw] lg:h-auto order-1 lg:order-2 overflow-hidden">
           <img
-            src={`/team/${member.photoSlug}_full.png`}
+            src={`/team/${member.photoSlug}_full.jpg`}
             alt={member.nameEn}
             className="w-full h-full object-cover object-top"
           />

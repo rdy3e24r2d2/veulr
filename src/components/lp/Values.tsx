@@ -37,7 +37,7 @@ export default function Values() {
       {/* ビジュアルバナー */}
       <div className="relative h-48 lg:h-56 overflow-hidden">
         <Image
-          src="/images/values-visual.png"
+          src="/images/values-visual.jpg"
           alt="チームのシルエット"
           fill
           className="object-cover object-center"

@@ -83,7 +83,7 @@ export default function Hero() {
       {/* ── 右カラム: ヒーロー画像 ── */}
       <div className="relative lg:w-[48%] h-[60vw] lg:h-auto order-1 lg:order-2 overflow-hidden">
         <Image
-          src="/images/hero-visual.png"
+          src="/images/hero-visual.jpg"
           alt="AI で生活をもっと便利に — Veulr"
           fill
           priority

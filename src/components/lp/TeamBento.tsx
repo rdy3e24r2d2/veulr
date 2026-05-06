@@ -57,12 +57,12 @@ export default function TeamBento() {
             <div className="relative z-10">
               <div className="relative overflow-hidden rounded-xl w-[160px] h-[200px] mx-auto">
                 <img
-                  src={`/team/${featuredMember.photoSlug}_bust.png`}
+                  src={`/team/${featuredMember.photoSlug}_bust.jpg`}
                   alt={featuredMember.nameEn}
                   className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                 />
                 <img
-                  src={`/team/${featuredMember.photoSlug}_full.png`}
+                  src={`/team/${featuredMember.photoSlug}_full.jpg`}
                   alt={`${featuredMember.nameEn} full`}
                   className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                 />
@@ -101,12 +101,12 @@ export default function TeamBento() {
             >
               <div className="relative overflow-hidden rounded-lg w-[80px] h-[100px] mx-auto">
                 <img
-                  src={`/team/${member.photoSlug}_bust.png`}
+                  src={`/team/${member.photoSlug}_bust.jpg`}
                   alt={member.nameEn}
                   className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                 />
                 <img
-                  src={`/team/${member.photoSlug}_full.png`}
+                  src={`/team/${member.photoSlug}_full.jpg`}
                   alt={`${member.nameEn} full`}
                   className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                 />

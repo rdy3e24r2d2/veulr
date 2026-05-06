@@ -44,7 +44,7 @@ export default function MVV() {
         {/* 写真 */}
         <div className="relative h-72 lg:h-auto min-h-[360px] order-1 lg:order-2 overflow-hidden">
           <Image
-            src="/mvv/mission.png"
+            src="/mvv/mission.jpg"
             alt="Mission — AI で生活をもっと便利に"
             fill
             className="object-cover object-center"
@@ -75,7 +75,7 @@ export default function MVV() {
         {/* 写真 */}
         <div className="relative h-72 lg:h-auto min-h-[360px] overflow-hidden">
           <Image
-            src="/mvv/vision.png"
+            src="/mvv/vision.jpg"
             alt="Vision — AI が身近に居る世界へ"
             fill
             className="object-cover object-center"
