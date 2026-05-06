@@ -25,7 +25,7 @@ const ITEMS = [
   },
   {
     term: "メールアドレス",
-    description: "rdy3e24r2d2@gmail.com",
+    description: "info@veulr.com",
   },
   {
     term: "販売 URL",
