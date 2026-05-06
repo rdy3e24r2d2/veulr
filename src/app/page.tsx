@@ -4,6 +4,7 @@ import Proof from "@/components/lp/Proof";
 import Product from "@/components/lp/Product";
 import TeamBento from "@/components/lp/TeamBento";
 import About from "@/components/lp/About";
+import MVV from "@/components/lp/MVV";
 import Footer from "@/components/lp/Footer";
 
 export default function HomePage() {
@@ -16,6 +17,7 @@ export default function HomePage() {
         <Product />
         <TeamBento />
         <About />
+        <MVV />
       </main>
       <Footer />
     </>
