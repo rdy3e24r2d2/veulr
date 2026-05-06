@@ -28,18 +28,18 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      style={{ background: "var(--veulr-surface-1)" }}
+      style={{ background: "#ffffff" }}
     >
       {/* 上段: 見出し + 写真 */}
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* 左: 見出し */}
         <div
           className="flex flex-col justify-center px-10 py-20 lg:px-16 lg:py-24 space-y-5"
-          style={{ borderRight: "1px solid var(--veulr-surface-border)" }}
+          style={{ borderRight: "1px solid oklch(0.88 0 0)" }}
         >
           <h2
             className="text-[clamp(1.5rem,3vw+0.5rem,2.5rem)] font-bold leading-tight"
-            style={{ color: "var(--veulr-text-primary)" }}
+            style={{ color: "oklch(0.12 0 0)" }}
           >
             社内の情報は、
             <br />
@@ -47,7 +47,7 @@ export default function Problem() {
           </h2>
           <p
             className="text-sm leading-7 max-w-sm"
-            style={{ color: "var(--veulr-text-secondary)" }}
+            style={{ color: "oklch(0.38 0 0)" }}
           >
             多くの会社では、必要な資料がどこかに存在しています。
             でも、探す手間が多すぎる。ファイルが見つけられない、最新版がわからない、
@@ -64,20 +64,20 @@ export default function Problem() {
             className="object-cover object-center"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          {/* 左から暗く */}
+          {/* 左から白くフェード */}
           <div
             className="absolute inset-0 hidden lg:block"
             style={{
               background:
-                "linear-gradient(to right, var(--veulr-surface-1) 0%, transparent 40%)",
+                "linear-gradient(to right, #ffffff 0%, transparent 40%)",
             }}
           />
-          {/* 下から暗く */}
+          {/* 下から白くフェード */}
           <div
             className="absolute inset-x-0 bottom-0 h-24"
             style={{
               background:
-                "linear-gradient(to top, var(--veulr-surface-1) 0%, transparent 100%)",
+                "linear-gradient(to top, #ffffff 0%, transparent 100%)",
             }}
           />
         </div>
@@ -86,7 +86,7 @@ export default function Problem() {
       {/* 下段: 4カード */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-        style={{ borderTop: "1px solid var(--veulr-surface-border)" }}
+        style={{ borderTop: "1px solid oklch(0.88 0 0)" }}
       >
         {PROBLEMS.map(({ icon: Icon, title, description }, i) => (
           <div
@@ -95,28 +95,28 @@ export default function Problem() {
             style={{
               borderRight:
                 i < PROBLEMS.length - 1
-                  ? "1px solid var(--veulr-surface-border)"
+                  ? "1px solid oklch(0.88 0 0)"
                   : undefined,
             }}
           >
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center"
               style={{
-                background: "oklch(0.55 0.22 280 / 15%)",
+                background: "oklch(0.55 0.22 280 / 10%)",
                 border: "1px solid oklch(0.55 0.22 280 / 25%)",
               }}
             >
-              <Icon size={20} style={{ color: "var(--veulr-accent-primary)" }} />
+              <Icon size={20} style={{ color: "oklch(0.55 0.22 280)" }} />
             </div>
             <p
               className="font-semibold text-sm"
-              style={{ color: "var(--veulr-text-primary)" }}
+              style={{ color: "oklch(0.12 0 0)" }}
             >
               {title}
             </p>
             <p
               className="text-xs leading-5"
-              style={{ color: "var(--veulr-text-secondary)" }}
+              style={{ color: "oklch(0.42 0 0)" }}
             >
               {description}
             </p>
