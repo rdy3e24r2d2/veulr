@@ -4,7 +4,6 @@ const NAV_ITEMS = [
   { label: "About", href: "#about" },
   { label: "Product", href: "#product" },
   { label: "Team", href: "#team" },
-  { label: "特定商取引法に基づく表記", href: "/tokushoho", underline: true },
   { label: "プライバシーポリシー", href: "/privacy", underline: true },
 ];
 
