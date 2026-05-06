@@ -11,11 +11,11 @@ export default function TeamPage() {
   return (
     <div
       style={{ background: "var(--veulr-surface-0)", minHeight: "100vh" }}
-      className="py-24 px-6"
+      className="py-12 px-4 md:py-24 md:px-6"
     >
       <div className="max-w-6xl mx-auto">
         {/* ヘッダー */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8 md:mb-20">
           <p
             className="text-sm tracking-[0.2em] uppercase font-medium mb-4"
             style={{ color: "var(--veulr-accent-primary)" }}
@@ -49,7 +49,7 @@ export default function TeamPage() {
               }}
             >
               {/* 写真エリア */}
-              <div className="relative overflow-hidden h-72">
+              <div className="relative overflow-hidden h-56 md:h-72">
                 {/* bust → full ホバー切替 */}
                 <img
                   src={`/team/${member.photoSlug}_bust.png`}
@@ -97,7 +97,7 @@ export default function TeamPage() {
               </div>
 
               {/* テキスト */}
-              <div className="px-6 pb-6 pt-2 space-y-2">
+              <div className="px-4 pb-4 pt-2 space-y-2 md:px-6 md:pb-6">
                 <div className="space-y-0.5">
                   <p
                     className="font-bold text-lg tracking-[0.08em]"

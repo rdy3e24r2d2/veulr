@@ -35,7 +35,7 @@ export default async function TeamMemberPage({ params }: Props) {
       <section className="relative flex flex-col lg:flex-row lg:min-h-screen overflow-hidden">
 
         {/* 写真ペイン（モバイル: 上, デスクトップ: 右）*/}
-        <div className="relative w-full h-[72vw] min-h-[280px] lg:absolute lg:inset-y-0 lg:right-0 lg:w-[48%] lg:h-auto overflow-hidden order-1 lg:order-2">
+        <div className="relative w-full h-[60vw] min-h-[220px] sm:h-[72vw] sm:min-h-[280px] lg:absolute lg:inset-y-0 lg:right-0 lg:w-[48%] lg:h-auto overflow-hidden order-1 lg:order-2">
           <img
             src={`/team/${member.photoSlug}_full.png`}
             alt={member.nameEn}
@@ -51,12 +51,12 @@ export default async function TeamMemberPage({ params }: Props) {
           />
           {/* 上端 */}
           <div
-            className="absolute inset-x-0 top-0 h-20 z-10"
+            className="absolute inset-x-0 top-0 h-12 sm:h-20 z-10"
             style={{ background: "linear-gradient(to bottom, var(--veulr-surface-0), transparent)" }}
           />
           {/* 下端フェード */}
           <div
-            className="absolute inset-x-0 bottom-0 h-28 z-10"
+            className="absolute inset-x-0 bottom-0 h-20 sm:h-28 z-10"
             style={{ background: "linear-gradient(to top, var(--veulr-surface-0), transparent)" }}
           />
           {/* カラーグロー */}
@@ -67,7 +67,7 @@ export default async function TeamMemberPage({ params }: Props) {
         </div>
 
         {/* テキストペイン（モバイル: 下, デスクトップ: 左）*/}
-        <div className="relative z-10 w-full lg:w-[52%] flex flex-col gap-8 px-5 pt-6 pb-10 lg:px-16 lg:py-20 order-2 lg:order-1">
+        <div className="relative z-10 w-full lg:w-[52%] flex flex-col gap-5 px-4 pt-4 pb-8 sm:gap-8 sm:px-5 sm:pt-6 sm:pb-10 lg:px-16 lg:py-20 order-2 lg:order-1">
 
           {/* 戻るリンク */}
           <Link
@@ -86,7 +86,7 @@ export default async function TeamMemberPage({ params }: Props) {
             <h1
               className="font-bold leading-none tracking-tighter"
               style={{
-                fontSize: "clamp(2.2rem, 8vw, 6rem)",
+                fontSize: "clamp(1.8rem, 8vw, 6rem)",
                 color: "var(--veulr-text-primary)",
               }}
             >
@@ -96,7 +96,7 @@ export default async function TeamMemberPage({ params }: Props) {
             {/* 日本語名 + モデル */}
             <div className="flex flex-wrap items-center gap-3">
               <span
-                className="text-lg font-medium tracking-widest"
+                className="text-base sm:text-lg font-medium tracking-widest"
                 style={{ color: "var(--veulr-text-secondary)" }}
               >
                 {member.name}
@@ -115,7 +115,7 @@ export default async function TeamMemberPage({ params }: Props) {
 
             {/* タグライン */}
             <p
-              className="text-base leading-relaxed max-w-md border-l-2 pl-4"
+              className="text-sm sm:text-base leading-relaxed max-w-full sm:max-w-md border-l-2 pl-4"
               style={{
                 color: "var(--veulr-text-secondary)",
                 borderColor: member.color,
@@ -159,7 +159,7 @@ export default async function TeamMemberPage({ params }: Props) {
         className="py-12 px-5 lg:py-24 lg:px-6"
         style={{ borderTop: `1px solid ${member.color}33` }}
       >
-        <div className="max-w-2xl mx-auto space-y-10 lg:space-y-14">
+        <div className="max-w-2xl mx-auto space-y-6 sm:space-y-10 lg:space-y-14">
 
           {/* バイオ */}
           <div className="space-y-4">
@@ -170,7 +170,7 @@ export default async function TeamMemberPage({ params }: Props) {
               Profile
             </p>
             <p
-              className="text-lg leading-9"
+              className="text-base leading-7 sm:text-lg sm:leading-9"
               style={{ color: "var(--veulr-text-secondary)" }}
             >
               {member.bio}
@@ -189,7 +189,7 @@ export default async function TeamMemberPage({ params }: Props) {
               {member.specialties.map((s) => (
                 <span
                   key={s}
-                  className="px-4 py-1.5 rounded-full text-sm font-medium"
+                  className="px-3 py-1 rounded-full text-xs sm:text-sm font-medium sm:px-4 sm:py-1.5"
                   style={{
                     border: `1px solid ${member.color}66`,
                     color: member.color,
@@ -229,7 +229,7 @@ export default async function TeamMemberPage({ params }: Props) {
 
           {/* 休日の過ごし方 */}
           <div
-            className="space-y-4 rounded-2xl p-6"
+            className="space-y-4 rounded-2xl p-4 sm:p-6"
             style={{ background: `${member.color}0a`, border: `1px solid ${member.color}22` }}
           >
             <p
@@ -255,7 +255,7 @@ export default async function TeamMemberPage({ params }: Props) {
               Recently on my mind
             </p>
             <p
-              className="text-sm leading-8 border-l-2 pl-5"
+              className="text-sm leading-7 sm:leading-8 border-l-2 pl-4 sm:pl-5"
               style={{
                 color: "var(--veulr-text-secondary)",
                 borderColor: `${member.color}66`,
