@@ -8,6 +8,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.55 0.22 280)",
     cssVar: "var(--veulr-jobs)",
     featured: true,
+    photoSlug: "leo",
   },
   {
     id: "woz",
@@ -18,6 +19,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.62 0.18 240)",
     cssVar: "var(--veulr-woz)",
     featured: false,
+    photoSlug: "neumann",
   },
   {
     id: "ive",
@@ -28,6 +30,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.70 0.18 330)",
     cssVar: "var(--veulr-ive)",
     featured: false,
+    photoSlug: "nicole",
   },
   {
     id: "richie",
@@ -38,6 +41,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.75 0.14 200)",
     cssVar: "var(--veulr-richie)",
     featured: false,
+    photoSlug: "jarred",
   },
   {
     id: "hoare",
@@ -48,6 +52,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.78 0.14 80)",
     cssVar: "var(--veulr-hoare)",
     featured: false,
+    photoSlug: "edwards",
   },
   {
     id: "drucker",
@@ -58,6 +63,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.70 0.14 160)",
     cssVar: "var(--veulr-drucker)",
     featured: false,
+    photoSlug: "jobs",
   },
   {
     id: "neumann",
@@ -68,6 +74,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.60 0.05 250)",
     cssVar: "var(--veulr-neumann)",
     featured: false,
+    photoSlug: "ethan",
   },
   {
     id: "cook",
@@ -78,6 +85,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.75 0.14 50)",
     cssVar: "var(--veulr-cook)",
     featured: false,
+    photoSlug: "andy",
   },
   {
     id: "ruth",
@@ -88,6 +96,7 @@ export const TEAM_MEMBERS = [
     color: "oklch(0.65 0.16 10)",
     cssVar: "var(--veulr-ruth)",
     featured: false,
+    photoSlug: "ruth",
   },
 ] as const;
 
