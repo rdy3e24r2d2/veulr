@@ -32,7 +32,7 @@ export default function Values() {
   return (
     <section
       id="values"
-      style={{ background: "#ffffff" }}
+      style={{ background: "oklch(0.93 0.01 258)" }}
     >
       {/* ビジュアルバナー */}
       <div className="relative h-48 lg:h-56 overflow-hidden">
@@ -48,14 +48,14 @@ export default function Values() {
           className="absolute inset-x-0 top-0 h-16"
           style={{
             background:
-              "linear-gradient(to bottom, #ffffff 0%, transparent 100%)",
+              "linear-gradient(to bottom, oklch(0.93 0.01 258) 0%, transparent 100%)",
           }}
         />
         <div
           className="absolute inset-x-0 bottom-0 h-16"
           style={{
             background:
-              "linear-gradient(to top, #ffffff 0%, transparent 100%)",
+              "linear-gradient(to top, oklch(0.93 0.01 258) 0%, transparent 100%)",
           }}
         />
       </div>
@@ -70,7 +70,7 @@ export default function Values() {
         </p>
         <h2
           className="text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-bold"
-          style={{ color: "oklch(0.12 0 0)" }}
+          style={{ color: "oklch(0.12 0.04 258)" }}
         >
           Veulr Values
         </h2>
@@ -79,7 +79,7 @@ export default function Values() {
       {/* 4カード — ボーダーグリッド */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-        style={{ borderTop: "1px solid oklch(0.88 0 0)" }}
+        style={{ borderTop: "1px solid oklch(0.84 0.012 258)" }}
       >
         {VALUES.map(({ icon: Icon, title, description, color }, i) => (
           <div
@@ -88,7 +88,7 @@ export default function Values() {
             style={{
               borderRight:
                 i < VALUES.length - 1
-                  ? "1px solid oklch(0.88 0 0)"
+                  ? "1px solid oklch(0.84 0.012 258)"
                   : undefined,
             }}
           >
@@ -104,13 +104,13 @@ export default function Values() {
             <div className="space-y-2">
               <p
                 className="font-bold text-base"
-                style={{ color: "oklch(0.12 0 0)" }}
+                style={{ color: "oklch(0.12 0.04 258)" }}
               >
                 {title}
               </p>
               <p
                 className="text-xs leading-5"
-                style={{ color: "oklch(0.42 0 0)" }}
+                style={{ color: "oklch(0.38 0.02 258)" }}
               >
                 {description}
               </p>

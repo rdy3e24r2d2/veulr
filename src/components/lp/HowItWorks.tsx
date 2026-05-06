@@ -29,7 +29,7 @@ export default function HowItWorks() {
     <section
       id="how"
       className="py-24 px-6"
-      style={{ background: "oklch(0.97 0 0)" }}
+      style={{ background: "oklch(0.93 0.01 258)" }}
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
@@ -41,7 +41,7 @@ export default function HowItWorks() {
           </p>
           <h2
             className="text-[clamp(1.5rem,3vw+0.5rem,2.5rem)] font-bold"
-            style={{ color: "oklch(0.12 0 0)" }}
+            style={{ color: "oklch(0.12 0.04 258)" }}
           >
             いつものファイルが、話しかけられる知識になる。
           </h2>
@@ -57,7 +57,7 @@ export default function HowItWorks() {
                 {i < STEPS.length - 1 && (
                   <div
                     className="hidden md:block absolute right-0 top-12 translate-x-1/2 z-10 text-lg font-light"
-                    style={{ color: "oklch(0.6 0 0)" }}
+                    style={{ color: "oklch(0.52 0.02 258)" }}
                   >
                     →
                   </div>
@@ -79,9 +79,9 @@ export default function HowItWorks() {
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center mb-5"
                   style={{
-                    background: "#ffffff",
-                    border: "1px solid oklch(0.88 0 0)",
-                    boxShadow: "0 1px 4px oklch(0 0 0 / 8%)",
+                    background: "oklch(0.97 0.006 258)",
+                    border: "1px solid oklch(0.84 0.012 258)",
+                    boxShadow: "0 1px 4px oklch(0.12 0.04 258 / 8%)",
                   }}
                 >
                   <Icon size={24} style={{ color: "oklch(0.55 0.22 280)" }} />
@@ -90,19 +90,19 @@ export default function HowItWorks() {
                 <div className="space-y-2">
                   <p
                     className="font-bold text-lg"
-                    style={{ color: "oklch(0.12 0 0)" }}
+                    style={{ color: "oklch(0.12 0.04 258)" }}
                   >
                     {step.title}
                   </p>
                   <p
                     className="text-sm font-medium"
-                    style={{ color: "oklch(0.35 0 0)" }}
+                    style={{ color: "oklch(0.30 0.02 258)" }}
                   >
                     {step.description}
                   </p>
                   <p
                     className="text-xs leading-5"
-                    style={{ color: "oklch(0.5 0 0)" }}
+                    style={{ color: "oklch(0.44 0.02 258)" }}
                   >
                     {step.detail}
                   </p>
