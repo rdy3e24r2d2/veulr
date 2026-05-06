@@ -52,12 +52,12 @@ export default function TeamPage() {
               <div className="relative overflow-hidden h-72">
                 {/* bust → full ホバー切替 */}
                 <img
-                  src={`/team/${member.photoSlug}_bust.jpg`}
+                  src={`/team/${member.photoSlug}_bust.png`}
                   alt={member.nameEn}
                   className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 opacity-100 group-hover:opacity-0"
                 />
                 <img
-                  src={`/team/${member.photoSlug}_full.jpg`}
+                  src={`/team/${member.photoSlug}_full.png`}
                   alt={`${member.nameEn} full`}
                   className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                 />
