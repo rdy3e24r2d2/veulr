@@ -29,10 +29,10 @@ export default async function TeamMemberPage({ params }: Props) {
   const next = TEAM_MEMBERS[idx + 1] ?? null;
 
   return (
-    <div style={{ background: "var(--veulr-surface-0)", minHeight: "100vh" }}>
+    <div style={{ background: "var(--veulr-surface-0)", minHeight: "100vh" }} className="overflow-x-hidden max-w-full">
 
       {/* ── Hero ── */}
-      <section className="relative flex flex-col lg:flex-row lg:min-h-screen overflow-hidden">
+      <section className="relative w-full flex flex-col lg:flex-row lg:min-h-screen overflow-hidden">
 
         {/* 写真ペイン（モバイル: 上, デスクトップ: 右）*/}
         <div className="relative w-full h-[60vw] min-h-[220px] sm:h-[72vw] sm:min-h-[280px] lg:absolute lg:inset-y-0 lg:right-0 lg:w-[48%] lg:h-auto overflow-hidden order-1 lg:order-2">
