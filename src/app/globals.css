@@ -100,6 +100,9 @@
   --veulr-cook:    oklch(0.50 0.16 50);
   --veulr-ruth:    oklch(0.48 0.18 10);
 
+  --veulr-text-on-image: oklch(0.98 0 0);
+  --veulr-overlay-image: oklch(0 0 0 / 50%);
+
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -193,6 +196,9 @@
   --veulr-text-primary:   oklch(0.96 0 0);
   --veulr-text-secondary: oklch(0.65 0 0);
   --veulr-text-muted:     oklch(0.45 0 0);
+
+  --veulr-text-on-image: oklch(0.98 0 0);
+  --veulr-overlay-image: oklch(0 0 0 / 40%);
 }
 
 /* Glow pulse animation for wireframe avatars */

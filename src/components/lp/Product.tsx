@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Search, RefreshCw, Lock, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Search, RefreshCw, Lock, ArrowRight, Check } from "lucide-react";
 
 /* ── FadeIn ──────────────────────────────────────────────── */
 function FadeIn({
@@ -51,23 +52,75 @@ function FadeIn({
   );
 }
 
+/* ── ブラウザフレーム ──────────────────────────────────────── */
+function BrowserFrame({
+  src,
+  alt,
+  width,
+  height,
+  url = "documentfinder.jp",
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  url?: string;
+}) {
+  return (
+    <div
+      className="rounded-xl overflow-hidden"
+      style={{
+        border: "1px solid oklch(0.35 0.05 280)",
+        boxShadow:
+          "0 30px 60px oklch(0 0 0 / 0.5), 0 0 0 1px oklch(0.55 0.22 280 / 0.15)",
+      }}
+    >
+      {/* macOS風タイトルバー */}
+      <div
+        className="flex items-center gap-1.5 px-4 py-2.5"
+        style={{ background: "oklch(0.20 0.03 280)" }}
+      >
+        <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+        <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+        <span className="w-3 h-3 rounded-full bg-[#28c840]" />
+        <span
+          className="flex-1 mx-4 h-5 rounded-md text-[10px] flex items-center justify-center px-3"
+          style={{
+            background: "oklch(0.15 0.02 280)",
+            color: "oklch(0.5 0.02 280)",
+          }}
+        >
+          {url}
+        </span>
+      </div>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="w-full h-auto"
+      />
+    </div>
+  );
+}
+
 /* ── データ ────────────────────────────────────────────────── */
 const PAIN_CARDS = [
   {
     num: "01",
-    emoji: "😖",
+    image: "/images/pain-01.jpg",
     title: "どのフォルダだっけ？",
     desc: "保存場所がバラバラで、探す時間が毎日発生。",
   },
   {
     num: "02",
-    emoji: "🔄",
+    image: "/images/pain-02.jpg",
     title: "また同じ質問が来た",
     desc: "総務・人事への問い合わせが減らない。",
   },
   {
     num: "03",
-    emoji: "📂",
+    image: "/images/pain-03.jpg",
     title: "更新されてない",
     desc: "古い情報が混在して、どれが最新版か分からない。",
   },
@@ -92,12 +145,6 @@ const FEATURES = [
     title: "BYOK 対応",
     desc: "自社の API キーで安全運用。データが外部に学習されない安心設計。",
   },
-];
-
-const MOCK_RESULTS = [
-  { icon: "📄", title: "退職時の PC 返却ルール", snippet: "PC は返却前にデータを完全消去し、IT 部門へ…", date: "2026/04/07" },
-  { icon: "📋", title: "PC・IT 機器貸与に関する規程", snippet: "社員に貸与する IT 機器の管理・返却に関する社内規程…", date: "2026/01/15" },
-  { icon: "📊", title: "備品・機器の返却フロー", snippet: "退職・異動時における備品・機器の返却手順について…", date: "2025/11/30" },
 ];
 
 /* ── コンポーネント ─────────────────────────────────────────── */
@@ -158,7 +205,9 @@ export default function Product() {
                   >
                     {card.num}
                   </span>
-                  <span className="text-3xl mb-4 block">{card.emoji}</span>
+                  <div className="w-16 h-16 mb-4 rounded-xl overflow-hidden">
+                    <Image src={card.image} alt={card.title} width={64} height={64} className="w-full h-full object-cover" />
+                  </div>
                   <p
                     className="font-bold text-base mb-2"
                     style={{ color: "var(--veulr-text-primary)" }}
@@ -183,7 +232,6 @@ export default function Product() {
         className="relative py-20 px-6 overflow-hidden"
         style={{ background: "oklch(0.13 0.04 280)" }}
       >
-        {/* 放射グラデーント */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -221,12 +269,193 @@ export default function Product() {
         </FadeIn>
       </div>
 
-      {/* ── ③ Features — ダークセクション ── */}
+      {/* ── ③ 製品ショーケース — ダークセクション ── */}
       <div
-        className="relative py-20 px-6 lg:px-16 overflow-hidden"
+        className="relative py-24 px-6 lg:px-16 overflow-hidden"
+        style={{ background: "oklch(0.09 0.02 280)" }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at top center, oklch(0.55 0.22 280 / 0.1) 0%, transparent 60%)",
+          }}
+        />
+        <div className="relative max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <p
+                className="text-[10px] tracking-[0.3em] uppercase font-medium mb-3"
+                style={{ color: "oklch(0.65 0.22 280)" }}
+              >
+                Actual Screen
+              </p>
+              <p
+                className="text-sm"
+                style={{ color: "oklch(0.55 0.03 270)" }}
+              >
+                実際の画面
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <BrowserFrame
+              src="/images/df-top.jpeg"
+              alt="Document Finder — トップ画面"
+              width={1200}
+              height={675}
+            />
+          </FadeIn>
+        </div>
+      </div>
+
+      {/* ── ④ 機能紹介 左右交互 — ダークセクション ── */}
+      <div
+        className="relative overflow-hidden"
+        style={{ background: "oklch(0.09 0.02 280)" }}
+      >
+        {/* Row 1 — テキスト左・画像右 */}
+        <div className="py-24 px-6 lg:px-16">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* テキスト */}
+            <FadeIn>
+              <div className="space-y-6">
+                <p
+                  className="text-[10px] tracking-[0.3em] uppercase font-semibold"
+                  style={{ color: "oklch(0.65 0.22 280)" }}
+                >
+                  Feature 01
+                </p>
+                <h3
+                  className="font-bold leading-snug"
+                  style={{
+                    fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)",
+                    color: "oklch(0.97 0 0)",
+                  }}
+                >
+                  そのまま聞ける
+                </h3>
+                <p
+                  className="text-base leading-8"
+                  style={{ color: "oklch(0.70 0.02 270)" }}
+                >
+                  「退職時のPC返却は？」キーワードを覚える必要なし。
+                  日常の言葉でそのまま質問できます。
+                </p>
+                <ul className="space-y-3">
+                  {["キーワード不要", "引用元付き回答", "日本語完全対応"].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <span
+                        className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{
+                          background: "oklch(0.55 0.22 280 / 0.18)",
+                          border: "1px solid oklch(0.55 0.22 280 / 0.3)",
+                        }}
+                      >
+                        <Check size={11} style={{ color: "oklch(0.65 0.22 280)" }} />
+                      </span>
+                      <span
+                        className="text-sm"
+                        style={{ color: "oklch(0.80 0.02 270)" }}
+                      >
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+            {/* 画像 */}
+            <FadeIn delay={120}>
+              <BrowserFrame
+                src="/images/df-chat.png"
+                alt="Document Finder — チャット検索画面"
+                width={800}
+                height={560}
+              />
+            </FadeIn>
+          </div>
+        </div>
+
+        {/* 区切り */}
+        <div
+          className="mx-6 lg:mx-16 max-w-6xl"
+          style={{
+            borderTop: "1px solid oklch(0.20 0.03 280)",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        />
+
+        {/* Row 2 — 画像左・テキスト右 */}
+        <div className="py-24 px-6 lg:px-16">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* 画像（モバイルでは先に表示） */}
+            <FadeIn className="lg:order-1 order-2">
+              <BrowserFrame
+                src="/images/df-vault.png"
+                alt="Document Finder — 書庫管理画面"
+                width={800}
+                height={560}
+              />
+            </FadeIn>
+            {/* テキスト */}
+            <FadeIn delay={120} className="lg:order-2 order-1">
+              <div className="space-y-6">
+                <p
+                  className="text-[10px] tracking-[0.3em] uppercase font-semibold"
+                  style={{ color: "oklch(0.65 0.22 280)" }}
+                >
+                  Feature 02
+                </p>
+                <h3
+                  className="font-bold leading-snug"
+                  style={{
+                    fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)",
+                    color: "oklch(0.97 0 0)",
+                  }}
+                >
+                  ファイルを追加するだけ
+                </h3>
+                <p
+                  className="text-base leading-8"
+                  style={{ color: "oklch(0.70 0.02 270)" }}
+                >
+                  マニュアル・規程・申請書を書庫にアップするだけ。
+                  AIが自動で学習し、即座に回答できるようになります。
+                </p>
+                <ul className="space-y-3">
+                  {["ドラッグ&ドロップ対応", "複数書庫管理", "更新即反映"].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <span
+                        className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{
+                          background: "oklch(0.55 0.22 280 / 0.18)",
+                          border: "1px solid oklch(0.55 0.22 280 / 0.3)",
+                        }}
+                      >
+                        <Check size={11} style={{ color: "oklch(0.65 0.22 280)" }} />
+                      </span>
+                      <span
+                        className="text-sm"
+                        style={{ color: "oklch(0.80 0.02 270)" }}
+                      >
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </div>
+
+      {/* ── ⑤ Features 3カード — ダークセクション ── */}
+      <div
+        className="relative py-16 px-6 lg:px-16 overflow-hidden"
         style={{ background: "oklch(0.11 0.03 280)" }}
       >
-        {/* 放射グラデーント */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -238,7 +467,7 @@ export default function Product() {
         <div className="relative max-w-6xl mx-auto">
           <FadeIn>
             <p
-              className="text-xs tracking-[0.25em] uppercase font-medium mb-12 text-center"
+              className="text-xs tracking-[0.25em] uppercase font-medium mb-10 text-center"
               style={{ color: "oklch(0.7 0.18 280)" }}
             >
               Features
@@ -249,7 +478,7 @@ export default function Product() {
             {FEATURES.map((feat, i) => (
               <FadeIn key={feat.num} delay={i * 100}>
                 <div
-                  className="group relative rounded-2xl p-8 transition-all duration-300 cursor-default"
+                  className="group relative rounded-2xl p-7 transition-all duration-300 cursor-default"
                   style={{
                     background: "oklch(0.18 0.03 280 / 0.6)",
                     border: "1px solid oklch(0.35 0.05 280)",
@@ -263,200 +492,94 @@ export default function Product() {
                     e.currentTarget.style.background = "oklch(0.18 0.03 280 / 0.6)";
                   }}
                 >
-                  {/* ウォーターマーク */}
                   <span
                     className="absolute -top-2 -right-1 font-black select-none pointer-events-none"
-                    style={{ fontSize: "6rem", color: "oklch(1 0 0 / 0.03)", lineHeight: 1 }}
+                    style={{ fontSize: "5rem", color: "oklch(1 0 0 / 0.03)", lineHeight: 1 }}
                   >
                     {feat.num}
                   </span>
 
-                  {/* アイコン */}
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-5"
                     style={{
                       background:
                         "linear-gradient(135deg, oklch(0.55 0.22 280 / 0.25), oklch(0.5 0.18 260 / 0.15))",
                       border: "1px solid oklch(0.55 0.22 280 / 0.3)",
                     }}
                   >
-                    <feat.icon size={18} style={{ color: "oklch(0.75 0.18 280)" }} />
+                    <feat.icon size={16} style={{ color: "oklch(0.75 0.18 280)" }} />
                   </div>
 
                   <p
-                    className="font-bold text-base mb-3"
+                    className="font-bold text-sm mb-2"
                     style={{ color: "oklch(0.95 0 0)" }}
                   >
                     {feat.title}
                   </p>
                   <p
-                    className="text-sm leading-6"
+                    className="text-xs leading-6"
                     style={{ color: "oklch(0.65 0.02 270)" }}
                   >
                     {feat.desc}
                   </p>
-
-                  {/* ボトムアクセントライン — ホバーで伸びる */}
-                  <div className="mt-6 pt-4" style={{ borderTop: "1px solid oklch(0.3 0.04 280)" }}>
-                    <div
-                      className="h-0.5 rounded-full transition-all duration-500"
-                      style={{
-                        width: "2.5rem",
-                        background:
-                          "linear-gradient(to right, oklch(0.65 0.22 280), oklch(0.55 0.18 260))",
-                      }}
-                      ref={(el) => {
-                        if (!el) return;
-                        const parent = el.closest(".group");
-                        if (!parent) return;
-                        parent.addEventListener("mouseenter", () => {
-                          el.style.width = "5rem";
-                        });
-                        parent.addEventListener("mouseleave", () => {
-                          el.style.width = "2.5rem";
-                        });
-                      }}
-                    />
-                  </div>
                 </div>
               </FadeIn>
             ))}
           </div>
-
-          {/* ── ④ UI モック ── */}
-          <FadeIn delay={200} className="mt-14">
-            <div
-              className="max-w-2xl mx-auto rounded-2xl p-6 space-y-4"
-              style={{
-                background: "oklch(1 0 0 / 0.95)",
-                backdropFilter: "blur(12px)",
-                border: "1px solid oklch(1 0 0 / 0.15)",
-                boxShadow:
-                  "0 25px 50px oklch(0 0 0 / 0.4), 0 0 0 1px oklch(0.55 0.22 280 / 0.1)",
-              }}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-bold" style={{ color: "oklch(0.2 0 0)" }}>
-                  Document Finder
-                </span>
-                <span
-                  className="text-xs px-2 py-0.5 rounded-full"
-                  style={{
-                    background: "oklch(0.55 0.22 280 / 0.12)",
-                    color: "oklch(0.45 0.22 280)",
-                    border: "1px solid oklch(0.55 0.22 280 / 0.25)",
-                  }}
-                >
-                  総務のミカタ
-                </span>
-              </div>
-
-              <div
-                className="flex items-center gap-2 px-4 py-3 rounded-xl"
-                style={{
-                  background: "oklch(0.96 0 0)",
-                  border: "1px solid oklch(0.9 0 0)",
-                }}
-              >
-                <Search size={14} style={{ color: "oklch(0.6 0 0)" }} />
-                <span className="text-sm flex-1" style={{ color: "oklch(0.55 0 0)" }}>
-                  退職時の PC 返却ルールを教えて
-                </span>
-              </div>
-
-              <div className="space-y-2">
-                {MOCK_RESULTS.map((result, i) => (
-                  <div
-                    key={i}
-                    className="flex gap-3 p-3 rounded-xl"
-                    style={{
-                      background: "oklch(0.97 0 0)",
-                      border: "1px solid oklch(0.92 0 0)",
-                    }}
-                  >
-                    <span className="text-base flex-shrink-0 mt-0.5">{result.icon}</span>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-start justify-between gap-2">
-                        <p className="text-sm font-medium truncate" style={{ color: "oklch(0.2 0 0)" }}>
-                          {result.title}
-                        </p>
-                        <span className="text-[10px] flex-shrink-0" style={{ color: "oklch(0.6 0 0)" }}>
-                          {result.date}
-                        </span>
-                      </div>
-                      <p className="text-xs leading-5 mt-0.5 line-clamp-1" style={{ color: "oklch(0.55 0 0)" }}>
-                        {result.snippet}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span
-                  className="text-xs px-2 py-0.5 rounded-full"
-                  style={{
-                    background: "oklch(0.55 0.22 280 / 0.12)",
-                    color: "oklch(0.45 0.22 280)",
-                    border: "1px solid oklch(0.55 0.22 280 / 0.25)",
-                  }}
-                >
-                  AI 解析済み
-                </span>
-                <span className="text-xs" style={{ color: "oklch(0.55 0 0)" }}>
-                  3件の関連文書を発見
-                </span>
-              </div>
-            </div>
-          </FadeIn>
-
-          {/* ── ⑤ CTA ── */}
-          <FadeIn delay={300} className="mt-10">
-            <div
-              className="max-w-2xl mx-auto rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
-              style={{
-                background: "oklch(0.55 0.22 280 / 0.12)",
-                border: "1px solid oklch(0.55 0.22 280 / 0.25)",
-              }}
-            >
-              <div>
-                <p className="font-bold text-xl" style={{ color: "oklch(0.95 0 0)" }}>
-                  まずは無料で試す
-                </p>
-                <p className="text-sm mt-1" style={{ color: "oklch(0.65 0.02 270)" }}>
-                  クレジットカード不要。14日間の無料トライアル。
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-3 flex-shrink-0">
-                <a
-                  href="https://documentfinder.jp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 h-10 px-6 rounded-xl text-sm font-bold transition-opacity hover:opacity-85"
-                  style={{
-                    background: "var(--veulr-accent-primary)",
-                    color: "oklch(0.97 0 0)",
-                  }}
-                >
-                  デモを体験する <ArrowRight size={14} />
-                </a>
-                <a
-                  href="https://documentfinder.jp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center h-10 px-6 rounded-xl text-sm font-medium transition-colors hover:bg-white/10"
-                  style={{
-                    border: "1px solid oklch(0.55 0.22 280 / 0.4)",
-                    color: "oklch(0.8 0.05 280)",
-                  }}
-                >
-                  資料ダウンロード
-                </a>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </div>
+
+      {/* ── ⑥ CTA — ダークセクション ── */}
+      <div
+        className="relative py-16 px-6 lg:px-16"
+        style={{ background: "oklch(0.11 0.03 280)" }}
+      >
+        <FadeIn>
+          <div
+            className="max-w-2xl mx-auto rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+            style={{
+              background: "oklch(0.55 0.22 280 / 0.12)",
+              border: "1px solid oklch(0.55 0.22 280 / 0.25)",
+            }}
+          >
+            <div>
+              <p className="font-bold text-xl" style={{ color: "oklch(0.95 0 0)" }}>
+                まずは無料で試す
+              </p>
+              <p className="text-sm mt-1" style={{ color: "oklch(0.65 0.02 270)" }}>
+                クレジットカード不要。14日間の無料トライアル。
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 flex-shrink-0">
+              <a
+                href="https://documentfinder.jp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 h-10 px-6 rounded-xl text-sm font-bold transition-opacity hover:opacity-85"
+                style={{
+                  background: "var(--veulr-accent-primary)",
+                  color: "oklch(0.97 0 0)",
+                }}
+              >
+                デモを体験する <ArrowRight size={14} />
+              </a>
+              <a
+                href="https://documentfinder.jp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center h-10 px-6 rounded-xl text-sm font-medium transition-colors hover:bg-white/10"
+                style={{
+                  border: "1px solid oklch(0.55 0.22 280 / 0.4)",
+                  color: "oklch(0.8 0.05 280)",
+                }}
+              >
+                資料ダウンロード
+              </a>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+
     </section>
   );
 }

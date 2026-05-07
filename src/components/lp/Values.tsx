@@ -31,19 +31,9 @@ export default function Values() {
   return (
     <section
       id="values"
-      style={{ background: "var(--veulr-section-bg)" }}
+      style={{ background: "var(--veulr-surface-0)" }}
+      className="py-16"
     >
-      {/* ビジュアルバナー */}
-      <div className="relative h-48 lg:h-56 overflow-hidden">
-        <Image
-          src="/images/values-visual.jpg"
-          alt="チームのシルエット"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-      </div>
-
       {/* ヘッダー */}
       <div className="text-center py-12 px-6">
         <p
@@ -60,42 +50,46 @@ export default function Values() {
         </h2>
       </div>
 
-      {/* 4カード — ボーダーグリッド */}
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-        style={{ borderTop: "1px solid var(--veulr-section-border)" }}
-      >
-        {VALUES.map(({ image, title, description, color }, i) => (
+      {/* 4カードグリッド */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-6 lg:px-16 pb-16">
+        {VALUES.map(({ image, title, description, color }) => (
           <div
             key={title}
-            className="flex flex-col"
+            className="group flex flex-col rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             style={{
-              borderRight:
-                i < VALUES.length - 1
-                  ? "1px solid var(--veulr-section-border)"
-                  : undefined,
+              border: "1px solid var(--veulr-section-border)",
+              background: "var(--veulr-surface-1)",
+              borderTop: `3px solid ${color}`,
             }}
           >
-            {/* 抽象画像 */}
-            <div className="relative w-full h-40 overflow-hidden rounded-t-xl">
+            {/* 画像エリア */}
+            <div className="relative w-full h-48 overflow-hidden">
               <Image
                 src={image}
                 alt={title}
                 fill
-                className="object-cover object-center"
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
             </div>
-            {/* テキスト */}
-            <div className="px-8 py-8 space-y-2">
+
+            {/* テキストエリア */}
+            <div className="px-6 py-6 space-y-3">
+              {/* カラードット + タイトル */}
+              <div className="flex items-center gap-2">
+                <span
+                  className="w-2 h-2 rounded-full flex-shrink-0"
+                  style={{ background: color }}
+                />
+                <p
+                  className="font-bold text-base"
+                  style={{ color: "var(--veulr-text-primary)" }}
+                >
+                  {title}
+                </p>
+              </div>
               <p
-                className="font-bold text-base"
-                style={{ color: "var(--veulr-text-primary)" }}
-              >
-                {title}
-              </p>
-              <p
-                className="text-xs leading-5"
+                className="text-sm leading-6"
                 style={{ color: "var(--veulr-text-secondary)" }}
               >
                 {description}
