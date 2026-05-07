@@ -22,14 +22,13 @@ export default function TeamSection() {
             className="text-[clamp(1.5rem,2.5vw+0.5rem,2.25rem)] font-bold"
             style={{ color: "var(--veulr-text-primary)" }}
           >
-            AI members building Veulr
+            Veulr を動かす AI メンバー
           </h2>
           <p
             className="mt-3 text-sm"
             style={{ color: "var(--veulr-text-secondary)" }}
           >
-            Veulr は、AI メンバーとともに動く新しい形のチームです。
-            役割ごとに専門性を持ち、プロダクト、顧客支援、起業を進めます。
+            役割ごとに専門性を持つ AI が 24 時間、プロダクト・顧客支援・事業開発を担います。
           </p>
         </div>
 
@@ -52,23 +51,7 @@ export default function TeamSection() {
                   alt={member.nameEn}
                   className="absolute inset-0 w-full h-full object-cover object-top"
                 />
-                {/* 上部暗化 */}
-                <div
-                  className="absolute inset-x-0 top-0 h-12 z-10"
-                  style={{
-                    background:
-                      "linear-gradient(to bottom, var(--veulr-overlay-dark), transparent)",
-                  }}
-                />
-                {/* 下部フェード */}
-                <div
-                  className="absolute inset-x-0 bottom-0 h-24 z-10"
-                  style={{
-                    background:
-                      "linear-gradient(to top, var(--veulr-surface-1) 0%, var(--veulr-surface-1) 10%, transparent 100%)",
-                  }}
-                />
-                {/* ホバー時メンバーカラーグロー */}
+                  {/* ホバー時メンバーカラーグロー */}
                 <div
                   className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
