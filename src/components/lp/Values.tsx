@@ -42,21 +42,6 @@ export default function Values() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* 上下グラデーション */}
-        <div
-          className="absolute inset-x-0 top-0 h-16"
-          style={{
-            background:
-              "linear-gradient(to bottom, var(--veulr-section-bg) 0%, transparent 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-x-0 bottom-0 h-16"
-          style={{
-            background:
-              "linear-gradient(to top, var(--veulr-section-bg) 0%, transparent 100%)",
-          }}
-        />
       </div>
 
       {/* ヘッダー */}
@@ -99,13 +84,6 @@ export default function Values() {
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              {/* 下部グラデーション */}
-              <div
-                className="absolute inset-x-0 bottom-0 h-10"
-                style={{
-                  background: `linear-gradient(to top, ${color}33 0%, transparent 100%)`,
-                }}
               />
             </div>
             {/* テキスト */}

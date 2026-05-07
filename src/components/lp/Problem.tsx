@@ -64,22 +64,6 @@ export default function Problem() {
             className="object-cover object-center"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          {/* 左からフェード */}
-          <div
-            className="absolute inset-0 hidden lg:block"
-            style={{
-              background:
-                "linear-gradient(to right, var(--veulr-section-bg) 0%, transparent 40%)",
-            }}
-          />
-          {/* 下からフェード */}
-          <div
-            className="absolute inset-x-0 bottom-0 h-24"
-            style={{
-              background:
-                "linear-gradient(to top, var(--veulr-section-bg) 0%, transparent 100%)",
-            }}
-          />
         </div>
       </div>
 

@@ -50,20 +50,6 @@ export default function MVV() {
             className="object-cover object-center"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div
-            className="absolute inset-0 hidden lg:block"
-            style={{
-              background:
-                "linear-gradient(to right, var(--veulr-surface-0) 0%, transparent 45%)",
-            }}
-          />
-          <div
-            className="absolute inset-x-0 bottom-0 h-20"
-            style={{
-              background:
-                "linear-gradient(to top, var(--veulr-surface-0) 0%, transparent 100%)",
-            }}
-          />
         </div>
       </div>
 
@@ -80,20 +66,6 @@ export default function MVV() {
             fill
             className="object-cover object-center"
             sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-          <div
-            className="absolute inset-0 hidden lg:block"
-            style={{
-              background:
-                "linear-gradient(to left, var(--veulr-surface-1) 0%, transparent 45%)",
-            }}
-          />
-          <div
-            className="absolute inset-x-0 bottom-0 h-20"
-            style={{
-              background:
-                "linear-gradient(to top, var(--veulr-surface-1) 0%, transparent 100%)",
-            }}
           />
         </div>
 
