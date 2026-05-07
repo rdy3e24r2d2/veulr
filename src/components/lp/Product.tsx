@@ -59,23 +59,40 @@ export default function Product() {
               "linear-gradient(to top, var(--veulr-surface-0) 0%, transparent 100%)",
           }}
         />
+        {/* 暗化オーバーレイ */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "var(--veulr-overlay-image)" }}
+        />
         {/* テキストオーバーレイ */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center space-y-2">
             <p
               className="text-xs tracking-[0.2em] uppercase font-medium"
-              style={{ color: "var(--veulr-accent-primary)" }}
+              style={{
+                color: "var(--veulr-text-on-image)",
+                textShadow: "0 1px 4px oklch(0 0 0 / 60%)",
+              }}
             >
               Product
             </p>
             <h2
               className="text-[clamp(1.75rem,4vw,3rem)] font-bold"
-              style={{ color: "var(--veulr-text-primary)" }}
+              style={{
+                color: "var(--veulr-text-on-image)",
+                textShadow: "0 1px 6px oklch(0 0 0 / 70%)",
+              }}
             >
               Document Finder
             </h2>
-            <p className="text-base font-medium" style={{ color: "var(--veulr-accent-primary)" }}>
-              総務のミカタ
+            <p
+              className="text-base font-semibold"
+              style={{
+                color: "var(--veulr-text-on-image)",
+                textShadow: "0 1px 4px oklch(0 0 0 / 60%)",
+              }}
+            >
+              社内のあらゆる文書をAIが24時間検索
             </p>
           </div>
         </div>
