@@ -3,6 +3,7 @@ import Hero from "@/components/lp/Hero";
 import Problem from "@/components/lp/Problem";
 import Product from "@/components/lp/Product";
 import HowItWorks from "@/components/lp/HowItWorks";
+import AboutHeader from "@/components/lp/AboutHeader";
 import MVV from "@/components/lp/MVV";
 import Values from "@/components/lp/Values";
 import TeamSection from "@/components/lp/TeamSection";
@@ -14,10 +15,14 @@ export default function HomePage() {
     <>
       <Header />
       <main>
+        {/* ── プロダクト ── */}
         <Hero />
         <Problem />
         <Product />
         <HowItWorks />
+
+        {/* ── 会社概要 ── */}
+        <AboutHeader />
         <MVV />
         <Values />
         <TeamSection />
