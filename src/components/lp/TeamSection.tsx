@@ -62,7 +62,7 @@ export default function TeamSection() {
                   className="absolute inset-x-0 top-0 h-12 z-10"
                   style={{
                     background:
-                      "linear-gradient(to bottom, oklch(0.08 0.01 260 / 50%), transparent)",
+                      "linear-gradient(to bottom, var(--veulr-overlay-dark), transparent)",
                   }}
                 />
                 {/* 下部フェード */}

@@ -67,7 +67,7 @@ export default function TeamPage() {
                   className="absolute inset-x-0 top-0 h-16 z-10"
                   style={{
                     background:
-                      "linear-gradient(to bottom, oklch(0.08 0.01 260 / 60%), transparent)",
+                      "linear-gradient(to bottom, var(--veulr-overlay-dark), transparent)",
                   }}
                 />
 

@@ -96,7 +96,7 @@ export default function Hero() {
           className="absolute inset-0 hidden lg:block"
           style={{
             background:
-              "linear-gradient(to right, var(--veulr-surface-0) 0%, oklch(0.06 0.01 260 / 40%) 25%, transparent 55%)",
+              "linear-gradient(to right, var(--veulr-surface-0) 0%, var(--veulr-overlay-dark) 25%, transparent 55%)",
           }}
         />
 
@@ -132,7 +132,7 @@ export default function Hero() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at 70% 50%, oklch(0.55 0.22 280 / 8%) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 70% 50%, var(--veulr-accent-glow) 0%, transparent 60%)",
           }}
         />
       </div>

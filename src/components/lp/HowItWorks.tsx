@@ -29,19 +29,19 @@ export default function HowItWorks() {
     <section
       id="how"
       className="py-24 px-6"
-      style={{ background: "oklch(0.87 0.012 258)" }}
+      style={{ background: "var(--veulr-section-bg)" }}
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p
             className="text-sm tracking-[0.2em] uppercase font-medium mb-4"
-            style={{ color: "oklch(0.55 0.22 280)" }}
+            style={{ color: "var(--veulr-accent-primary)" }}
           >
             How it works
           </p>
           <h2
             className="text-[clamp(1.5rem,3vw+0.5rem,2.5rem)] font-bold"
-            style={{ color: "oklch(0.12 0.04 258)" }}
+            style={{ color: "var(--veulr-text-primary)" }}
           >
             いつものファイルが、話しかけられる知識になる。
           </h2>
@@ -57,7 +57,7 @@ export default function HowItWorks() {
                 {i < STEPS.length - 1 && (
                   <div
                     className="hidden md:block absolute right-0 top-12 translate-x-1/2 z-10 text-lg font-light"
-                    style={{ color: "oklch(0.52 0.02 258)" }}
+                    style={{ color: "var(--veulr-text-muted)" }}
                   >
                     →
                   </div>
@@ -67,9 +67,9 @@ export default function HowItWorks() {
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 text-lg font-bold"
                   style={{
-                    background: "oklch(0.55 0.22 280 / 12%)",
-                    border: "1px solid oklch(0.55 0.22 280 / 30%)",
-                    color: "oklch(0.55 0.22 280)",
+                    background: "var(--veulr-accent-bg-soft)",
+                    border: "1px solid var(--veulr-accent-border-soft)",
+                    color: "var(--veulr-accent-primary)",
                   }}
                 >
                   {step.num}
@@ -79,30 +79,30 @@ export default function HowItWorks() {
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center mb-5"
                   style={{
-                    background: "oklch(0.97 0.006 258)",
-                    border: "1px solid oklch(0.84 0.012 258)",
-                    boxShadow: "0 1px 4px oklch(0.12 0.04 258 / 8%)",
+                    background: "var(--veulr-surface-1)",
+                    border: "1px solid var(--veulr-section-border)",
+                    boxShadow: "0 1px 4px var(--veulr-surface-border)",
                   }}
                 >
-                  <Icon size={24} style={{ color: "oklch(0.55 0.22 280)" }} />
+                  <Icon size={24} style={{ color: "var(--veulr-accent-primary)" }} />
                 </div>
 
                 <div className="space-y-2">
                   <p
                     className="font-bold text-lg"
-                    style={{ color: "oklch(0.12 0.04 258)" }}
+                    style={{ color: "var(--veulr-text-primary)" }}
                   >
                     {step.title}
                   </p>
                   <p
                     className="text-sm font-medium"
-                    style={{ color: "oklch(0.30 0.02 258)" }}
+                    style={{ color: "var(--veulr-text-primary)" }}
                   >
                     {step.description}
                   </p>
                   <p
                     className="text-xs leading-5"
-                    style={{ color: "oklch(0.44 0.02 258)" }}
+                    style={{ color: "var(--veulr-text-secondary)" }}
                   >
                     {step.detail}
                   </p>

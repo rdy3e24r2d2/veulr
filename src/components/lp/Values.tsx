@@ -5,25 +5,25 @@ const VALUES = [
     image: "/images/values/simple.jpg",
     title: "シンプル",
     description: "本質だけを残す。方程式のように少ない要素で大きな応用を作る。",
-    color: "oklch(0.62 0.18 240)",
+    color: "var(--veulr-woz)",
   },
   {
     image: "/images/values/delight.jpg",
     title: "感動",
     description: '"満足" で止まらない。使い始めた瞬間に "すごい" と言わせる。',
-    color: "oklch(0.70 0.18 330)",
+    color: "var(--veulr-ive)",
   },
   {
     image: "/images/values/speed.jpg",
     title: "スピード",
     description: "対応も改善も早く。顧客の時間を守り、時間を返す。",
-    color: "oklch(0.78 0.14 80)",
+    color: "var(--veulr-hoare)",
   },
   {
     image: "/images/values/support.jpg",
     title: "伴走支援",
     description: "経営目線、現場の立場の両方の視点から改善する。",
-    color: "oklch(0.70 0.14 160)",
+    color: "var(--veulr-drucker)",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function Values() {
   return (
     <section
       id="values"
-      style={{ background: "oklch(0.87 0.012 258)" }}
+      style={{ background: "var(--veulr-section-bg)" }}
     >
       {/* ビジュアルバナー */}
       <div className="relative h-48 lg:h-56 overflow-hidden">
@@ -47,14 +47,14 @@ export default function Values() {
           className="absolute inset-x-0 top-0 h-16"
           style={{
             background:
-              "linear-gradient(to bottom, oklch(0.87 0.012 258) 0%, transparent 100%)",
+              "linear-gradient(to bottom, var(--veulr-section-bg) 0%, transparent 100%)",
           }}
         />
         <div
           className="absolute inset-x-0 bottom-0 h-16"
           style={{
             background:
-              "linear-gradient(to top, oklch(0.87 0.012 258) 0%, transparent 100%)",
+              "linear-gradient(to top, var(--veulr-section-bg) 0%, transparent 100%)",
           }}
         />
       </div>
@@ -63,13 +63,13 @@ export default function Values() {
       <div className="text-center py-12 px-6">
         <p
           className="text-xs tracking-[0.3em] uppercase font-medium mb-3"
-          style={{ color: "oklch(0.55 0.22 280)" }}
+          style={{ color: "var(--veulr-accent-primary)" }}
         >
           Values
         </p>
         <h2
           className="text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-bold"
-          style={{ color: "oklch(0.12 0.04 258)" }}
+          style={{ color: "var(--veulr-text-primary)" }}
         >
           Veulr Values
         </h2>
@@ -78,7 +78,7 @@ export default function Values() {
       {/* 4カード — ボーダーグリッド */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-        style={{ borderTop: "1px solid oklch(0.84 0.012 258)" }}
+        style={{ borderTop: "1px solid var(--veulr-section-border)" }}
       >
         {VALUES.map(({ image, title, description, color }, i) => (
           <div
@@ -87,7 +87,7 @@ export default function Values() {
             style={{
               borderRight:
                 i < VALUES.length - 1
-                  ? "1px solid oklch(0.84 0.012 258)"
+                  ? "1px solid var(--veulr-section-border)"
                   : undefined,
             }}
           >
@@ -112,13 +112,13 @@ export default function Values() {
             <div className="px-8 py-8 space-y-2">
               <p
                 className="font-bold text-base"
-                style={{ color: "oklch(0.12 0.04 258)" }}
+                style={{ color: "var(--veulr-text-primary)" }}
               >
                 {title}
               </p>
               <p
                 className="text-xs leading-5"
-                style={{ color: "oklch(0.38 0.02 258)" }}
+                style={{ color: "var(--veulr-text-secondary)" }}
               >
                 {description}
               </p>
