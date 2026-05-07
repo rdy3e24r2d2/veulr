@@ -127,6 +127,9 @@
   html {
     @apply font-sans;
   }
+  html, body {
+    overflow-x: hidden;
+  }
 }
 /* ---- Veulr brand tokens (dark only) ---- */
 .dark {
