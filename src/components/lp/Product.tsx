@@ -188,38 +188,45 @@ export default function Product() {
             {PAIN_CARDS.map((card, i) => (
               <FadeIn key={card.num} delay={i * 100}>
                 <div
-                  className="relative rounded-2xl p-7 overflow-hidden group transition-transform duration-300 hover:-translate-y-1"
+                  className="relative rounded-2xl overflow-hidden group transition-transform duration-300 hover:-translate-y-1"
                   style={{
                     background: "var(--veulr-surface-1)",
                     border: "1px solid var(--veulr-surface-border)",
                     borderTop: "3px solid var(--veulr-accent-primary)",
                   }}
                 >
+                  {/* 番号オーバーレイ */}
                   <span
-                    className="absolute -top-2 -right-1 font-black select-none pointer-events-none"
+                    className="absolute top-2 right-2 font-black select-none pointer-events-none z-10"
                     style={{
                       fontSize: "5rem",
-                      color: "oklch(0.55 0.22 280 / 0.06)",
+                      color: "oklch(0.55 0.22 280 / 0.12)",
                       lineHeight: 1,
                     }}
                   >
                     {card.num}
                   </span>
-                  <div className="w-16 h-16 mb-4 rounded-xl overflow-hidden">
-                    <Image src={card.image} alt={card.title} width={64} height={64} className="w-full h-full object-cover" />
+
+                  {/* 全幅画像 */}
+                  <div className="w-full h-44 overflow-hidden">
+                    <Image src={card.image} alt={card.title} width={400} height={176} className="w-full h-full object-cover" />
                   </div>
-                  <p
-                    className="font-bold text-base mb-2"
-                    style={{ color: "var(--veulr-text-primary)" }}
-                  >
-                    「{card.title}」
-                  </p>
-                  <p
-                    className="text-sm leading-6"
-                    style={{ color: "var(--veulr-text-secondary)" }}
-                  >
-                    {card.desc}
-                  </p>
+
+                  {/* テキストコンテンツ */}
+                  <div className="p-7">
+                    <p
+                      className="font-bold text-base mb-2"
+                      style={{ color: "var(--veulr-text-primary)" }}
+                    >
+                      「{card.title}」
+                    </p>
+                    <p
+                      className="text-sm leading-6"
+                      style={{ color: "var(--veulr-text-secondary)" }}
+                    >
+                      {card.desc}
+                    </p>
+                  </div>
                 </div>
               </FadeIn>
             ))}
