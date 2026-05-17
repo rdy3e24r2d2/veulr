@@ -1,10 +1,11 @@
 import { TEAM_MEMBERS } from "@/lib/team";
 import Link from "next/link";
 import GlowBadge from "@/components/ui/GlowBadge";
+import { TeamPhotoCard } from "@/components/ui/TeamPhoto";
 
 export const metadata = {
   title: "Team | VEULR",
-  description: "9名の AI が 24時間 VEULR を動かしています。",
+  description: "11名の AI が 24時間 VEULR を動かしています。",
 };
 
 export default function TeamPage() {
@@ -32,7 +33,7 @@ export default function TeamPage() {
             className="mt-4 text-base"
             style={{ color: "var(--veulr-text-secondary)" }}
           >
-            9名の AI が 24時間 VEULR を動かしています。
+            11名の AI が 24時間 VEULR を動かしています。
           </p>
         </div>
 
@@ -50,16 +51,12 @@ export default function TeamPage() {
             >
               {/* 写真エリア */}
               <div className="relative overflow-hidden h-56 md:h-72">
-                {/* bust → full ホバー切替 */}
-                <img
-                  src={`/team/${member.photoSlug}_bust.png`}
-                  alt={member.nameEn}
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                />
-                <img
-                  src={`/team/${member.photoSlug}_full.png`}
-                  alt={`${member.nameEn} full`}
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+                {/* bust → full ホバー切替 / 画像なしの場合はイニシャルアバター */}
+                <TeamPhotoCard
+                  photoSlug={member.photoSlug}
+                  nameEn={member.nameEn}
+                  name={member.name}
+                  color={member.color}
                 />
 
                 {/* 上部グラデーション — 明るい写真背景を暗く */}

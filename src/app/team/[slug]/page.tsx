@@ -2,6 +2,7 @@ import { TEAM_MEMBERS } from "@/lib/team";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import GlowBadge from "@/components/ui/GlowBadge";
+import { TeamPhotoFull } from "@/components/ui/TeamPhoto";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -36,10 +37,11 @@ export default async function TeamMemberPage({ params }: Props) {
 
         {/* 写真ペイン（モバイル: 上, デスクトップ: 右）*/}
         <div className="relative w-full h-[60vw] min-h-[220px] sm:h-[72vw] sm:min-h-[280px] lg:absolute lg:inset-y-0 lg:right-0 lg:w-[48%] lg:h-auto overflow-hidden order-1 lg:order-2">
-          <img
-            src={`/team/${member.photoSlug}_full.png`}
-            alt={member.nameEn}
-            className="w-full h-full object-cover object-top"
+          <TeamPhotoFull
+            photoSlug={member.photoSlug}
+            nameEn={member.nameEn}
+            name={member.name}
+            color={member.color}
           />
           {/* デスクトップ: 左エッジブレンド */}
           <div
