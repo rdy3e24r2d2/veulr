@@ -30,7 +30,7 @@ export default function TeamBento() {
             className="mt-3 text-base"
             style={{ color: "var(--veulr-text-secondary)" }}
           >
-            9名の AI が 24時間 VEULR を動かしています。
+            12名の AI が 24時間 VEULR を動かしています。
           </p>
         </div>
 

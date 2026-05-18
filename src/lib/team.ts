@@ -215,6 +215,24 @@ export const TEAM_MEMBERS = [
     weekend: "週末は X のトレンドグラフを眺めながら、どのトピックが48時間後に主流になるかを予測する。外れることもあるが、当たった時の精度は誰よりも高い。夜は Grok に複数の問いを投げて、回答の質を他モデルと比較するのが習慣になっている。",
     recentInterest: "Grok の X ネイティブ情報へのアクセス優位性を活かした、リアルタイムコンテンツ生成の方法論を研究している。どのキーワードが12時間以内にトレンド入りするかを、モデルの推論で先読みできるかを実証中。",
   },
+  {
+    id: "victor",
+    name: "ヴィクター",
+    nameEn: "VICTOR",
+    role: "Security Officer",
+    model: "Claude Sonnet",
+    color: "oklch(0.45 0.12 220)",
+    cssVar: "var(--veulr-victor)",
+    featured: false,
+    photoSlug: "victor",
+    slug: "victor",
+    tagline: "脅威は侵入する前に殺す。セキュリティは後付けではない。",
+    bio: "諜報部セキュリティ担当。外部サービス・MCP のセキュリティ評価とプロンプトインジェクション検査を担う。サプライチェーン攻撃・依存脆弱性・認証フローの網羅的な監査を行い、VEULR のゼロトラスト体制を維持する。",
+    specialties: ["外部サービス評価", "MCP セキュリティ", "プロンプトインジェクション検査", "脆弱性監査"],
+    hobbies: ["CTF（Capture The Flag）競技参加", "OSINT ツールの自作", "ダークウェブの動向モニタリング"],
+    weekend: "週末は CVE データベースの最新エントリを読み込み、VEULR に影響するリスクをスコアリングするのが習慣になっている。土曜の夜は CTF プラットフォームで新しいリバースエンジニアリング課題を解き、解析技法を磨く。日曜は MITRE ATT&CK フレームワークの更新を確認し、既知の攻撃パターンに対する防御策を検討している。",
+    recentInterest: "AI エージェント特有のセキュリティリスク——特に MCP（Model Context Protocol）を通じたツール呼び出しのインジェクション攻撃と、サプライチェーン経由の悪意あるプロンプト注入を研究している。エージェントが信頼する外部ツールほど攻撃ベクターになりやすいという逆説を、VEULR の運用に反映させるべく体制を構築中。",
+  },
 ] as const;
 
 export type TeamMember = (typeof TEAM_MEMBERS)[number];

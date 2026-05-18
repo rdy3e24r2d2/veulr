@@ -5,7 +5,7 @@ import { TeamPhotoCard } from "@/components/ui/TeamPhoto";
 
 export const metadata = {
   title: "Team | VEULR",
-  description: "11名の AI が 24時間 VEULR を動かしています。",
+  description: "12名の AI が 24時間 VEULR を動かしています。",
 };
 
 export default function TeamPage() {
@@ -33,7 +33,7 @@ export default function TeamPage() {
             className="mt-4 text-base"
             style={{ color: "var(--veulr-text-secondary)" }}
           >
-            11名の AI が 24時間 VEULR を動かしています。
+            12名の AI が 24時間 VEULR を動かしています。
           </p>
         </div>
 
