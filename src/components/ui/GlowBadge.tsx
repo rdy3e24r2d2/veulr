@@ -16,8 +16,8 @@ export default function GlowBadge({ color, size = "md", children }: GlowBadgePro
       }}
       className={
         size === "sm"
-          ? "inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-[var(--veulr-surface-2)]"
-          : "inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--veulr-surface-2)]"
+          ? "inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-[var(--veuler-surface-2)]"
+          : "inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--veuler-surface-2)]"
       }
     >
       {children}

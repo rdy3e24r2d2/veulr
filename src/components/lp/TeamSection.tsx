@@ -7,26 +7,26 @@ export default function TeamSection() {
     <section
       id="team"
       className="py-24 px-6"
-      style={{ background: "var(--veulr-surface-0)" }}
+      style={{ background: "var(--veuler-surface-0)" }}
     >
       <div className="max-w-6xl mx-auto">
         {/* ヘッダー */}
         <div className="text-center mb-16">
           <p
             className="text-sm tracking-[0.2em] uppercase font-medium mb-4"
-            style={{ color: "var(--veulr-accent-primary)" }}
+            style={{ color: "var(--veuler-accent-primary)" }}
           >
             Team
           </p>
           <h2
             className="text-[clamp(1.5rem,2.5vw+0.5rem,2.25rem)] font-bold"
-            style={{ color: "var(--veulr-text-primary)" }}
+            style={{ color: "var(--veuler-text-primary)" }}
           >
-            Veulr を動かす AI メンバー
+            Veuler を動かす AI メンバー
           </h2>
           <p
             className="mt-3 text-sm"
-            style={{ color: "var(--veulr-text-secondary)" }}
+            style={{ color: "var(--veuler-text-secondary)" }}
           >
             役割ごとに専門性を持つ AI が 24 時間、プロダクト・顧客支援・事業開発を担います。
           </p>
@@ -40,8 +40,8 @@ export default function TeamSection() {
               href={`/team/${member.slug}`}
               className="group relative rounded-2xl overflow-hidden block transition-transform duration-300 hover:-translate-y-1"
               style={{
-                background: "var(--veulr-surface-1)",
-                border: "1px solid var(--veulr-surface-border)",
+                background: "var(--veuler-surface-1)",
+                border: "1px solid var(--veuler-surface-border)",
               }}
             >
               {/* 写真エリア */}
@@ -70,19 +70,19 @@ export default function TeamSection() {
               <div className="px-5 pb-5 pt-2 space-y-1.5">
                 <p
                   className="font-bold text-base tracking-[0.06em]"
-                  style={{ color: "var(--veulr-text-primary)" }}
+                  style={{ color: "var(--veuler-text-primary)" }}
                 >
                   {member.nameEn}
                 </p>
                 <p
                   className="text-xs tracking-wider"
-                  style={{ color: "var(--veulr-text-muted)" }}
+                  style={{ color: "var(--veuler-text-muted)" }}
                 >
                   {member.name} · {member.model}
                 </p>
                 <p
                   className="text-xs leading-5 line-clamp-2"
-                  style={{ color: "var(--veulr-text-secondary)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
                   {member.tagline}
                 </p>

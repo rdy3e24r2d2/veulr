@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
   const member = TEAM_MEMBERS.find((m) => m.slug === slug);
   if (!member) return {};
   return {
-    title: `${member.name} (${member.nameEn}) | VEULR`,
+    title: `${member.name} (${member.nameEn}) | VEULER`,
     description: member.bio,
   };
 }
@@ -30,7 +30,7 @@ export default async function TeamMemberPage({ params }: Props) {
   const next = TEAM_MEMBERS[idx + 1] ?? null;
 
   return (
-    <div style={{ background: "var(--veulr-surface-0)", minHeight: "100vh" }} className="overflow-x-hidden max-w-full">
+    <div style={{ background: "var(--veuler-surface-0)", minHeight: "100vh" }} className="overflow-x-hidden max-w-full">
 
       {/* ── Hero ── */}
       <section className="relative w-full flex flex-col lg:flex-row lg:min-h-screen overflow-hidden">
@@ -48,18 +48,18 @@ export default async function TeamMemberPage({ params }: Props) {
             className="absolute inset-0 z-10 hidden lg:block"
             style={{
               background:
-                "linear-gradient(to right, var(--veulr-surface-0) 0%, transparent 40%)",
+                "linear-gradient(to right, var(--veuler-surface-0) 0%, transparent 40%)",
             }}
           />
           {/* 上端 */}
           <div
             className="absolute inset-x-0 top-0 h-12 sm:h-20 z-10"
-            style={{ background: "linear-gradient(to bottom, var(--veulr-surface-0), transparent)" }}
+            style={{ background: "linear-gradient(to bottom, var(--veuler-surface-0), transparent)" }}
           />
           {/* 下端フェード */}
           <div
             className="absolute inset-x-0 bottom-0 h-20 sm:h-28 z-10"
-            style={{ background: "linear-gradient(to top, var(--veulr-surface-0), transparent)" }}
+            style={{ background: "linear-gradient(to top, var(--veuler-surface-0), transparent)" }}
           />
           {/* カラーグロー */}
           <div
@@ -75,7 +75,7 @@ export default async function TeamMemberPage({ params }: Props) {
           <Link
             href="/#team"
             className="text-xs tracking-[0.2em] uppercase hover:text-white transition-colors self-start"
-            style={{ color: "var(--veulr-text-muted)" }}
+            style={{ color: "var(--veuler-text-muted)" }}
           >
             ← Team
           </Link>
@@ -89,7 +89,7 @@ export default async function TeamMemberPage({ params }: Props) {
               className="font-bold leading-none tracking-tighter"
               style={{
                 fontSize: "clamp(1.8rem, 8vw, 6rem)",
-                color: "var(--veulr-text-primary)",
+                color: "var(--veuler-text-primary)",
               }}
             >
               {member.nameEn}
@@ -99,7 +99,7 @@ export default async function TeamMemberPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-3">
               <span
                 className="text-base sm:text-lg font-medium tracking-widest"
-                style={{ color: "var(--veulr-text-secondary)" }}
+                style={{ color: "var(--veuler-text-secondary)" }}
               >
                 {member.name}
               </span>
@@ -119,7 +119,7 @@ export default async function TeamMemberPage({ params }: Props) {
             <p
               className="text-sm sm:text-base leading-relaxed max-w-full sm:max-w-md border-l-2 pl-4"
               style={{
-                color: "var(--veulr-text-secondary)",
+                color: "var(--veuler-text-secondary)",
                 borderColor: member.color,
                 fontStyle: "italic",
               }}
@@ -133,7 +133,7 @@ export default async function TeamMemberPage({ params }: Props) {
             {prev ? (
               <Link
                 href={`/team/${prev.slug}`}
-                style={{ color: "var(--veulr-text-muted)" }}
+                style={{ color: "var(--veuler-text-muted)" }}
                 className="text-sm hover:text-white transition-colors py-2 pr-4"
               >
                 ← {prev.nameEn}
@@ -144,7 +144,7 @@ export default async function TeamMemberPage({ params }: Props) {
             {next ? (
               <Link
                 href={`/team/${next.slug}`}
-                style={{ color: "var(--veulr-text-muted)" }}
+                style={{ color: "var(--veuler-text-muted)" }}
                 className="text-sm hover:text-white transition-colors py-2 pl-4"
               >
                 {next.nameEn} →
@@ -173,7 +173,7 @@ export default async function TeamMemberPage({ params }: Props) {
             </p>
             <p
               className="text-base leading-7 sm:text-lg sm:leading-9"
-              style={{ color: "var(--veulr-text-secondary)" }}
+              style={{ color: "var(--veuler-text-secondary)" }}
             >
               {member.bio}
             </p>
@@ -217,7 +217,7 @@ export default async function TeamMemberPage({ params }: Props) {
                 <li
                   key={h}
                   className="flex items-start gap-3 text-sm"
-                  style={{ color: "var(--veulr-text-secondary)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
                   <span
                     className="mt-2 w-1 h-1 rounded-full flex-shrink-0"
@@ -242,7 +242,7 @@ export default async function TeamMemberPage({ params }: Props) {
             </p>
             <p
               className="text-sm leading-8"
-              style={{ color: "var(--veulr-text-secondary)" }}
+              style={{ color: "var(--veuler-text-secondary)" }}
             >
               {member.weekend}
             </p>
@@ -259,7 +259,7 @@ export default async function TeamMemberPage({ params }: Props) {
             <p
               className="text-sm leading-7 sm:leading-8 border-l-2 pl-4 sm:pl-5"
               style={{
-                color: "var(--veulr-text-secondary)",
+                color: "var(--veuler-text-secondary)",
                 borderColor: `${member.color}66`,
               }}
             >
@@ -270,12 +270,12 @@ export default async function TeamMemberPage({ params }: Props) {
           {/* チームに戻る */}
           <div
             className="pt-4"
-            style={{ borderTop: "1px solid var(--veulr-surface-border)" }}
+            style={{ borderTop: "1px solid var(--veuler-surface-border)" }}
           >
             <Link
               href="/#team"
               className="text-sm tracking-[0.15em] uppercase hover:text-white transition-colors"
-              style={{ color: "var(--veulr-text-muted)" }}
+              style={{ color: "var(--veuler-text-muted)" }}
             >
               ← チーム一覧に戻る
             </Link>

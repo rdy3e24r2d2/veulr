@@ -19,7 +19,7 @@ function StatItem({ value, suffix, unit, label, trigger }: StatItemProps) {
       <dt className="flex items-baseline gap-1">
         <span
           className="font-mono font-bold text-[clamp(2.5rem,5vw,4rem)]"
-          style={{ color: "var(--veulr-text-primary)" }}
+          style={{ color: "var(--veuler-text-primary)" }}
         >
           {count}
           {suffix}
@@ -27,7 +27,7 @@ function StatItem({ value, suffix, unit, label, trigger }: StatItemProps) {
         {unit && (
           <span
             className="text-lg"
-            style={{ color: "var(--veulr-text-secondary)" }}
+            style={{ color: "var(--veuler-text-secondary)" }}
           >
             {unit}
           </span>
@@ -35,7 +35,7 @@ function StatItem({ value, suffix, unit, label, trigger }: StatItemProps) {
       </dt>
       <dd
         className="text-sm font-medium tracking-wide"
-        style={{ color: "var(--veulr-text-secondary)" }}
+        style={{ color: "var(--veuler-text-secondary)" }}
       >
         {label}
       </dd>
@@ -57,9 +57,9 @@ export default function Proof() {
       ref={ref}
       className="py-20"
       style={{
-        background: "var(--veulr-surface-0)",
-        borderTop: "1px solid var(--veulr-surface-border)",
-        borderBottom: "1px solid var(--veulr-surface-border)",
+        background: "var(--veuler-surface-0)",
+        borderTop: "1px solid var(--veuler-surface-border)",
+        borderBottom: "1px solid var(--veuler-surface-border)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6">

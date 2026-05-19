@@ -1,4 +1,4 @@
-import VeulrLogo from "@/components/icons/VeulrLogo";
+import VeulerLogo from "@/components/icons/VeulerLogo";
 
 const NAV_ITEMS = [
   { label: "ミッション",           href: "#mission" },
@@ -13,14 +13,14 @@ export default function Footer() {
     <footer
       className="py-12"
       style={{
-        background: "var(--veulr-surface-0)",
-        borderTop: "1px solid var(--veulr-surface-border)",
+        background: "var(--veuler-surface-0)",
+        borderTop: "1px solid var(--veuler-surface-border)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex flex-col items-center sm:items-start gap-1">
-          <VeulrLogo />
-          <p className="text-xs" style={{ color: "var(--veulr-text-muted)" }}>
+          <VeulerLogo />
+          <p className="text-xs" style={{ color: "var(--veuler-text-muted)" }}>
             AI が身近に居る世界へ。
           </p>
         </div>
@@ -31,10 +31,10 @@ export default function Footer() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className={`text-sm transition-colors duration-200 hover:text-white ${
+                  className={`text-sm transition-colors duration-200 footer-nav-link ${
                     item.underline ? "underline underline-offset-2" : ""
                   }`}
-                  style={{ color: "var(--veulr-text-secondary)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
                   {item.label}
                 </a>
@@ -43,8 +43,8 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <p className="text-xs" style={{ color: "var(--veulr-text-muted)" }}>
-          © 2026 Veulr. All rights reserved.
+        <p className="text-xs" style={{ color: "var(--veuler-text-muted)" }}>
+          © 2026 Veuler. All rights reserved.
         </p>
       </div>
     </footer>

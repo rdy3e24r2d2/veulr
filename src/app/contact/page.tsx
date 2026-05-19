@@ -50,18 +50,18 @@ export default function ContactPage() {
     return (
       <main
         className="min-h-screen flex items-center justify-center px-6"
-        style={{ background: "var(--veulr-surface-0)" }}
+        style={{ background: "var(--veuler-surface-0)" }}
       >
         <div
           className="rounded-2xl p-8 max-w-lg w-full text-center"
           style={{
-            background: "var(--veulr-surface-1)",
-            border: "1px solid var(--veulr-surface-border)",
+            background: "var(--veuler-surface-1)",
+            border: "1px solid var(--veuler-surface-border)",
           }}
         >
           <div
             className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6"
-            style={{ background: "var(--veulr-accent-glow)" }}
+            style={{ background: "var(--veuler-accent-glow)" }}
           >
             <svg
               width="28"
@@ -72,20 +72,20 @@ export default function ContactPage() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              style={{ color: "var(--veulr-accent-primary)" }}
+              style={{ color: "var(--veuler-accent-primary)" }}
             >
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
           <h1
             className="text-xl font-bold mb-3"
-            style={{ color: "var(--veulr-text-primary)" }}
+            style={{ color: "var(--veuler-text-primary)" }}
           >
             送信完了
           </h1>
           <p
             className="text-sm leading-relaxed mb-8"
-            style={{ color: "var(--veulr-text-secondary)" }}
+            style={{ color: "var(--veuler-text-secondary)" }}
           >
             お問い合わせありがとうございます。
             <br />
@@ -94,7 +94,7 @@ export default function ContactPage() {
           <Link
             href="/"
             className="text-sm transition-colors duration-200"
-            style={{ color: "var(--veulr-accent-primary)" }}
+            style={{ color: "var(--veuler-accent-primary)" }}
           >
             ← トップへ戻る
           </Link>
@@ -106,14 +106,14 @@ export default function ContactPage() {
   return (
     <main
       className="min-h-screen px-6 py-16"
-      style={{ background: "var(--veulr-surface-0)" }}
+      style={{ background: "var(--veuler-surface-0)" }}
     >
       <div className="max-w-lg mx-auto">
         <div className="mb-8">
           <Link
             href="/"
             className="text-sm transition-colors duration-200"
-            style={{ color: "var(--veulr-accent-primary)" }}
+            style={{ color: "var(--veuler-accent-primary)" }}
           >
             ← トップへ戻る
           </Link>
@@ -121,13 +121,13 @@ export default function ContactPage() {
 
         <h1
           className="text-2xl font-bold mb-2"
-          style={{ color: "var(--veulr-text-primary)" }}
+          style={{ color: "var(--veuler-text-primary)" }}
         >
           お問い合わせ
         </h1>
         <p
           className="text-sm mb-10"
-          style={{ color: "var(--veulr-text-secondary)" }}
+          style={{ color: "var(--veuler-text-secondary)" }}
         >
           ご質問・ご相談はこちらからお送りください。
         </p>
@@ -135,8 +135,8 @@ export default function ContactPage() {
         <div
           className="rounded-2xl p-8"
           style={{
-            background: "var(--veulr-surface-1)",
-            border: "1px solid var(--veulr-surface-border)",
+            background: "var(--veuler-surface-1)",
+            border: "1px solid var(--veuler-surface-border)",
           }}
         >
           <form onSubmit={handleSubmit} noValidate>
@@ -155,9 +155,9 @@ export default function ContactPage() {
                 <label
                   htmlFor="name"
                   className="text-sm font-medium"
-                  style={{ color: "var(--veulr-text-secondary)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
-                  お名前 <span style={{ color: "var(--veulr-accent-primary)" }}>*</span>
+                  お名前 <span style={{ color: "var(--veuler-accent-primary)" }}>*</span>
                 </label>
                 <input
                   id="name"
@@ -167,16 +167,16 @@ export default function ContactPage() {
                   autoComplete="name"
                   className="rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200"
                   style={{
-                    background: "var(--veulr-surface-2)",
-                    border: "1px solid var(--veulr-surface-border)",
-                    color: "var(--veulr-text-primary)",
+                    background: "var(--veuler-surface-2)",
+                    border: "1px solid var(--veuler-surface-border)",
+                    color: "var(--veuler-text-primary)",
                   }}
                   onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "var(--veulr-accent-primary)";
-                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--veulr-accent-glow)";
+                    e.currentTarget.style.borderColor = "var(--veuler-accent-primary)";
+                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--veuler-accent-glow)";
                   }}
                   onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "var(--veulr-surface-border)";
+                    e.currentTarget.style.borderColor = "var(--veuler-surface-border)";
                     e.currentTarget.style.boxShadow = "none";
                   }}
                   placeholder="山田 太郎"
@@ -188,9 +188,9 @@ export default function ContactPage() {
                 <label
                   htmlFor="email"
                   className="text-sm font-medium"
-                  style={{ color: "var(--veulr-text-secondary)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
-                  メールアドレス <span style={{ color: "var(--veulr-accent-primary)" }}>*</span>
+                  メールアドレス <span style={{ color: "var(--veuler-accent-primary)" }}>*</span>
                 </label>
                 <input
                   id="email"
@@ -200,16 +200,16 @@ export default function ContactPage() {
                   autoComplete="email"
                   className="rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200"
                   style={{
-                    background: "var(--veulr-surface-2)",
-                    border: "1px solid var(--veulr-surface-border)",
-                    color: "var(--veulr-text-primary)",
+                    background: "var(--veuler-surface-2)",
+                    border: "1px solid var(--veuler-surface-border)",
+                    color: "var(--veuler-text-primary)",
                   }}
                   onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "var(--veulr-accent-primary)";
-                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--veulr-accent-glow)";
+                    e.currentTarget.style.borderColor = "var(--veuler-accent-primary)";
+                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--veuler-accent-glow)";
                   }}
                   onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "var(--veulr-surface-border)";
+                    e.currentTarget.style.borderColor = "var(--veuler-surface-border)";
                     e.currentTarget.style.boxShadow = "none";
                   }}
                   placeholder="taro@example.com"
@@ -221,9 +221,9 @@ export default function ContactPage() {
                 <label
                   htmlFor="subject"
                   className="text-sm font-medium"
-                  style={{ color: "var(--veulr-text-secondary)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
-                  件名 <span style={{ color: "var(--veulr-accent-primary)" }}>*</span>
+                  件名 <span style={{ color: "var(--veuler-accent-primary)" }}>*</span>
                 </label>
                 <input
                   id="subject"
@@ -232,16 +232,16 @@ export default function ContactPage() {
                   required
                   className="rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200"
                   style={{
-                    background: "var(--veulr-surface-2)",
-                    border: "1px solid var(--veulr-surface-border)",
-                    color: "var(--veulr-text-primary)",
+                    background: "var(--veuler-surface-2)",
+                    border: "1px solid var(--veuler-surface-border)",
+                    color: "var(--veuler-text-primary)",
                   }}
                   onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "var(--veulr-accent-primary)";
-                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--veulr-accent-glow)";
+                    e.currentTarget.style.borderColor = "var(--veuler-accent-primary)";
+                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--veuler-accent-glow)";
                   }}
                   onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "var(--veulr-surface-border)";
+                    e.currentTarget.style.borderColor = "var(--veuler-surface-border)";
                     e.currentTarget.style.boxShadow = "none";
                   }}
                   placeholder="サービスについてのご質問"
@@ -253,9 +253,9 @@ export default function ContactPage() {
                 <label
                   htmlFor="message"
                   className="text-sm font-medium"
-                  style={{ color: "var(--veulr-text-secondary)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
-                  メッセージ <span style={{ color: "var(--veulr-accent-primary)" }}>*</span>
+                  メッセージ <span style={{ color: "var(--veuler-accent-primary)" }}>*</span>
                 </label>
                 <textarea
                   id="message"
@@ -264,17 +264,17 @@ export default function ContactPage() {
                   rows={6}
                   className="rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200 resize-y"
                   style={{
-                    background: "var(--veulr-surface-2)",
-                    border: "1px solid var(--veulr-surface-border)",
-                    color: "var(--veulr-text-primary)",
+                    background: "var(--veuler-surface-2)",
+                    border: "1px solid var(--veuler-surface-border)",
+                    color: "var(--veuler-text-primary)",
                     minHeight: "120px",
                   }}
                   onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "var(--veulr-accent-primary)";
-                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--veulr-accent-glow)";
+                    e.currentTarget.style.borderColor = "var(--veuler-accent-primary)";
+                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--veuler-accent-glow)";
                   }}
                   onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "var(--veulr-surface-border)";
+                    e.currentTarget.style.borderColor = "var(--veuler-surface-border)";
                     e.currentTarget.style.boxShadow = "none";
                   }}
                   placeholder="お問い合わせ内容をご記入ください"
@@ -297,7 +297,7 @@ export default function ContactPage() {
                 disabled={status === "submitting"}
                 className="w-full h-11 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
-                  background: "var(--veulr-accent-primary)",
+                  background: "var(--veuler-accent-primary)",
                   color: "oklch(0.96 0 0)",
                 }}
                 onMouseEnter={(e) => {

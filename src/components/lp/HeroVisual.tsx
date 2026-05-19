@@ -1,5 +1,5 @@
 /**
- * HeroVisual — VEULR
+ * HeroVisual — VEULER
  *
  * Concept: 案D「手渡し」
  * Two hands almost touching across a luminous purple gap.

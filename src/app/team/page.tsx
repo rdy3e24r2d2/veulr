@@ -4,14 +4,14 @@ import GlowBadge from "@/components/ui/GlowBadge";
 import { TeamPhotoCard } from "@/components/ui/TeamPhoto";
 
 export const metadata = {
-  title: "Team | VEULR",
-  description: "12名の AI が 24時間 VEULR を動かしています。",
+  title: "Team | VEULER",
+  description: "12名の AI が 24時間 VEULER を動かしています。",
 };
 
 export default function TeamPage() {
   return (
     <div
-      style={{ background: "var(--veulr-surface-0)", minHeight: "100vh" }}
+      style={{ background: "var(--veuler-surface-0)", minHeight: "100vh" }}
       className="py-12 px-4 md:py-24 md:px-6"
     >
       <div className="max-w-6xl mx-auto">
@@ -19,21 +19,21 @@ export default function TeamPage() {
         <div className="text-center mb-8 md:mb-20">
           <p
             className="text-sm tracking-[0.2em] uppercase font-medium mb-4"
-            style={{ color: "var(--veulr-accent-primary)" }}
+            style={{ color: "var(--veuler-accent-primary)" }}
           >
             Team
           </p>
           <h1
             className="text-[clamp(2rem,4vw+0.5rem,4rem)] font-bold"
-            style={{ color: "var(--veulr-text-primary)" }}
+            style={{ color: "var(--veuler-text-primary)" }}
           >
             チーム
           </h1>
           <p
             className="mt-4 text-base"
-            style={{ color: "var(--veulr-text-secondary)" }}
+            style={{ color: "var(--veuler-text-secondary)" }}
           >
-            12名の AI が 24時間 VEULR を動かしています。
+            12名の AI が 24時間 VEULER を動かしています。
           </p>
         </div>
 
@@ -45,8 +45,8 @@ export default function TeamPage() {
               href={`/team/${member.slug}`}
               className="group relative rounded-2xl overflow-hidden block transition-transform duration-300 hover:-translate-y-1"
               style={{
-                background: "var(--veulr-surface-1)",
-                border: "1px solid var(--veulr-surface-border)",
+                background: "var(--veuler-surface-1)",
+                border: "1px solid var(--veuler-surface-border)",
               }}
             >
               {/* 写真エリア */}
@@ -64,7 +64,7 @@ export default function TeamPage() {
                   className="absolute inset-x-0 top-0 h-16 z-10"
                   style={{
                     background:
-                      "linear-gradient(to bottom, var(--veulr-overlay-dark), transparent)",
+                      "linear-gradient(to bottom, var(--veuler-overlay-dark), transparent)",
                   }}
                 />
 
@@ -73,7 +73,7 @@ export default function TeamPage() {
                   className="absolute inset-x-0 bottom-0 h-28 z-10"
                   style={{
                     background:
-                      "linear-gradient(to top, var(--veulr-surface-1) 0%, var(--veulr-surface-1) 20%, transparent 100%)",
+                      "linear-gradient(to top, var(--veuler-surface-1) 0%, var(--veuler-surface-1) 20%, transparent 100%)",
                   }}
                 />
 
@@ -98,20 +98,20 @@ export default function TeamPage() {
                 <div className="space-y-0.5">
                   <p
                     className="font-bold text-lg tracking-[0.08em]"
-                    style={{ color: "var(--veulr-text-primary)" }}
+                    style={{ color: "var(--veuler-text-primary)" }}
                   >
                     {member.nameEn}
                   </p>
                   <p
                     className="text-xs tracking-wider"
-                    style={{ color: "var(--veulr-text-muted)" }}
+                    style={{ color: "var(--veuler-text-muted)" }}
                   >
                     {member.name} · {member.model}
                   </p>
                 </div>
                 <p
                   className="text-sm leading-6 line-clamp-2"
-                  style={{ color: "var(--veulr-text-secondary)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
                   {member.tagline}
                 </p>

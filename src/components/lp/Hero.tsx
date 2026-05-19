@@ -9,7 +9,7 @@ export default function Hero() {
       {/* ── 背景画像 ── */}
       <Image
         src="/images/hero-visual.jpg"
-        alt="AI で生活をもっと便利に — Veulr"
+        alt="AI で生活をもっと便利に — Veuler"
         fill
         priority
         className="object-cover object-center"
@@ -19,7 +19,7 @@ export default function Hero() {
       {/* フラット暗化オーバーレイ */}
       <div
         className="absolute inset-0"
-        style={{ background: "var(--veulr-overlay-image)" }}
+        style={{ background: "var(--veuler-overlay-image)" }}
       />
 
       {/* 左下スクリム — テキスト可読性強化 */}
@@ -45,7 +45,7 @@ export default function Hero() {
           <p
             className="text-[10px] tracking-[0.3em] uppercase font-medium"
             style={{
-              color: "var(--veulr-text-on-image)",
+              color: "var(--veuler-text-on-image)",
               textShadow: "0 1px 3px oklch(0 0 0 / 35%)",
             }}
           >
@@ -63,7 +63,7 @@ export default function Hero() {
           >
             Issue 01 · 2026
             <br />
-            Veulr / Tokyo
+            Veuler / Tokyo
           </div>
         </div>
 
@@ -85,7 +85,7 @@ export default function Hero() {
             className="font-bold leading-[1.05] tracking-tight"
             style={{
               fontSize: "clamp(3rem, 6.5vw, 6.5rem)",
-              color: "var(--veulr-text-on-image)",
+              color: "var(--veuler-text-on-image)",
               textShadow:
                 "0 1px 2px oklch(0 0 0 / 40%), 0 0 32px oklch(0 0 0 / 25%)",
             }}
@@ -114,7 +114,7 @@ export default function Hero() {
               href="#mission"
               className="inline-flex items-center justify-center h-11 px-7 rounded-lg text-sm font-medium transition-opacity duration-200 hover:opacity-85"
               style={{
-                background: "var(--veulr-accent-primary)",
+                background: "var(--veuler-accent-primary)",
                 color: "oklch(0.96 0 0)",
               }}
             >
@@ -125,7 +125,7 @@ export default function Hero() {
               className="inline-flex items-center justify-center h-11 px-7 rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-white/10"
               style={{
                 border: "1px solid oklch(1 0 0 / 60%)",
-                color: "var(--veulr-text-on-image)",
+                color: "var(--veuler-text-on-image)",
                 background: "transparent",
               }}
             >

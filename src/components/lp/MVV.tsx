@@ -2,22 +2,22 @@ import Image from "next/image";
 
 export default function MVV() {
   return (
-    <section style={{ background: "var(--veulr-surface-0)" }}>
+    <section style={{ background: "var(--veuler-surface-0)" }}>
 
       {/* ── Mission ── */}
       <div
         className="grid grid-cols-1 lg:grid-cols-2"
-        style={{ borderBottom: "1px solid var(--veulr-surface-border)" }}
+        style={{ borderBottom: "1px solid var(--veuler-surface-border)" }}
       >
         {/* テキスト */}
         <div
           className="flex flex-col justify-center px-10 py-20 lg:px-16 lg:py-28 space-y-6 order-2 lg:order-1"
           id="mission"
-          style={{ borderRight: "1px solid var(--veulr-surface-border)" }}
+          style={{ borderRight: "1px solid var(--veuler-surface-border)" }}
         >
           <p
             className="text-xs tracking-[0.3em] uppercase font-medium"
-            style={{ color: "var(--veulr-accent-primary)" }}
+            style={{ color: "var(--veuler-accent-primary)" }}
           >
             Mission
           </p>
@@ -25,7 +25,7 @@ export default function MVV() {
             className="font-bold leading-[1.15]"
             style={{
               fontSize: "clamp(2rem, 4vw + 0.5rem, 3.5rem)",
-              color: "var(--veulr-text-primary)",
+              color: "var(--veuler-text-primary)",
             }}
           >
             AI で生活を
@@ -34,7 +34,7 @@ export default function MVV() {
           </h2>
           <p
             className="text-sm leading-7 max-w-sm"
-            style={{ color: "var(--veulr-text-secondary)" }}
+            style={{ color: "var(--veuler-text-secondary)" }}
           >
             仕事も生活の一部。AI を使って、働く毎日から日常まで、
             面倒を取り除き、時間を取り戻す。
@@ -56,7 +56,7 @@ export default function MVV() {
       {/* ── Vision ── */}
       <div
         className="grid grid-cols-1 lg:grid-cols-2"
-        style={{ borderBottom: "1px solid var(--veulr-surface-border)" }}
+        style={{ borderBottom: "1px solid var(--veuler-surface-border)" }}
       >
         {/* 写真 */}
         <div className="relative h-72 lg:h-auto min-h-[360px] overflow-hidden">
@@ -74,13 +74,13 @@ export default function MVV() {
           className="flex flex-col justify-center px-10 py-20 lg:px-16 lg:py-28 space-y-6"
           id="vision"
           style={{
-            background: "var(--veulr-surface-1)",
-            borderLeft: "1px solid var(--veulr-surface-border)",
+            background: "var(--veuler-surface-1)",
+            borderLeft: "1px solid var(--veuler-surface-border)",
           }}
         >
           <p
             className="text-xs tracking-[0.3em] uppercase font-medium"
-            style={{ color: "var(--veulr-accent-primary)" }}
+            style={{ color: "var(--veuler-accent-primary)" }}
           >
             Vision
           </p>
@@ -88,7 +88,7 @@ export default function MVV() {
             className="font-bold leading-[1.15]"
             style={{
               fontSize: "clamp(2rem, 4vw + 0.5rem, 3.5rem)",
-              color: "var(--veulr-text-primary)",
+              color: "var(--veuler-text-primary)",
             }}
           >
             AI が身近に
@@ -97,7 +97,7 @@ export default function MVV() {
           </h2>
           <p
             className="text-sm leading-7 max-w-sm"
-            style={{ color: "var(--veulr-text-secondary)" }}
+            style={{ color: "var(--veuler-text-secondary)" }}
           >
             すべての人に "AI 活用が当たり前" を広げる。
           </p>

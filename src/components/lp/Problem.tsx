@@ -28,18 +28,18 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      style={{ background: "var(--veulr-section-bg)" }}
+      style={{ background: "var(--veuler-section-bg)" }}
     >
       {/* 上段: 見出し + 写真 */}
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* 左: 見出し */}
         <div
           className="flex flex-col justify-center px-10 py-20 lg:px-16 lg:py-24 space-y-5"
-          style={{ borderRight: "1px solid var(--veulr-section-border)" }}
+          style={{ borderRight: "1px solid var(--veuler-section-border)" }}
         >
           <h2
             className="text-[clamp(1.5rem,3vw+0.5rem,2.5rem)] font-bold leading-tight"
-            style={{ color: "var(--veulr-text-primary)" }}
+            style={{ color: "var(--veuler-text-primary)" }}
           >
             社内の情報は、
             <br />
@@ -47,7 +47,7 @@ export default function Problem() {
           </h2>
           <p
             className="text-sm leading-7 max-w-sm"
-            style={{ color: "var(--veulr-text-secondary)" }}
+            style={{ color: "var(--veuler-text-secondary)" }}
           >
             多くの会社では、必要な資料がどこかに存在しています。
             でも、探す手間が多すぎる。ファイルが見つけられない、最新版がわからない、
@@ -70,7 +70,7 @@ export default function Problem() {
       {/* 下段: 4カード */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-        style={{ borderTop: "1px solid var(--veulr-section-border)" }}
+        style={{ borderTop: "1px solid var(--veuler-section-border)" }}
       >
         {PROBLEMS.map(({ icon: Icon, title, description }, i) => (
           <div
@@ -79,28 +79,28 @@ export default function Problem() {
             style={{
               borderRight:
                 i < PROBLEMS.length - 1
-                  ? "1px solid var(--veulr-section-border)"
+                  ? "1px solid var(--veuler-section-border)"
                   : undefined,
             }}
           >
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center"
               style={{
-                background: "var(--veulr-accent-bg-soft)",
-                border: "1px solid var(--veulr-accent-border-soft)",
+                background: "var(--veuler-accent-bg-soft)",
+                border: "1px solid var(--veuler-accent-border-soft)",
               }}
             >
-              <Icon size={20} style={{ color: "var(--veulr-accent-primary)" }} />
+              <Icon size={20} style={{ color: "var(--veuler-accent-primary)" }} />
             </div>
             <p
               className="font-semibold text-sm"
-              style={{ color: "var(--veulr-text-primary)" }}
+              style={{ color: "var(--veuler-text-primary)" }}
             >
               {title}
             </p>
             <p
               className="text-xs leading-5"
-              style={{ color: "var(--veulr-text-secondary)" }}
+              style={{ color: "var(--veuler-text-secondary)" }}
             >
               {description}
             </p>

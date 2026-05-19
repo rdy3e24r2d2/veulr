@@ -70,15 +70,15 @@ function BrowserFrame({
     <div
       className="rounded-xl overflow-hidden"
       style={{
-        border: "1px solid oklch(0.35 0.05 280)",
+        border: "1px solid var(--veuler-surface-border)",
         boxShadow:
-          "0 30px 60px oklch(0 0 0 / 0.5), 0 0 0 1px oklch(0.55 0.22 280 / 0.15)",
+          "0 8px 32px oklch(0 0 0 / 0.08), 0 0 0 1px var(--veuler-accent-border-soft)",
       }}
     >
       {/* macOS風タイトルバー */}
       <div
         className="flex items-center gap-1.5 px-4 py-2.5"
-        style={{ background: "oklch(0.20 0.03 280)" }}
+        style={{ background: "var(--veuler-surface-1)" }}
       >
         <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
@@ -86,8 +86,8 @@ function BrowserFrame({
         <span
           className="flex-1 mx-4 h-5 rounded-md text-[10px] flex items-center justify-center px-3"
           style={{
-            background: "oklch(0.15 0.02 280)",
-            color: "oklch(0.5 0.02 280)",
+            background: "var(--veuler-surface-2)",
+            color: "var(--veuler-text-muted)",
           }}
         >
           {url}
@@ -155,14 +155,14 @@ export default function Product() {
       {/* ── ① Pain — ライトセクション ── */}
       <div
         className="py-20 px-6 lg:px-16"
-        style={{ background: "var(--veulr-surface-0)" }}
+        style={{ background: "var(--veuler-surface-0)" }}
       >
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
               <p
                 className="text-xs tracking-[0.25em] uppercase font-medium mb-4"
-                style={{ color: "var(--veulr-accent-primary)" }}
+                style={{ color: "var(--veuler-accent-primary)" }}
               >
                 Product
               </p>
@@ -170,14 +170,14 @@ export default function Product() {
                 className="font-bold leading-tight"
                 style={{
                   fontSize: "clamp(2rem, 4vw, 3.25rem)",
-                  color: "var(--veulr-text-primary)",
+                  color: "var(--veuler-text-primary)",
                 }}
               >
                 Document Finder
               </h2>
               <p
                 className="mt-2 text-lg"
-                style={{ color: "var(--veulr-text-secondary)" }}
+                style={{ color: "var(--veuler-text-secondary)" }}
               >
                 社内のあらゆる文書をAIが答える
               </p>
@@ -190,9 +190,9 @@ export default function Product() {
                 <div
                   className="relative rounded-2xl overflow-hidden group transition-transform duration-300 hover:-translate-y-1"
                   style={{
-                    background: "var(--veulr-surface-1)",
-                    border: "1px solid var(--veulr-surface-border)",
-                    borderTop: "3px solid var(--veulr-accent-primary)",
+                    background: "var(--veuler-surface-1)",
+                    border: "1px solid var(--veuler-surface-border)",
+                    borderTop: "3px solid var(--veuler-accent-primary)",
                   }}
                 >
                   {/* 番号オーバーレイ */}
@@ -216,13 +216,13 @@ export default function Product() {
                   <div className="p-7">
                     <p
                       className="font-bold text-base mb-2"
-                      style={{ color: "var(--veulr-text-primary)" }}
+                      style={{ color: "var(--veuler-text-primary)" }}
                     >
                       「{card.title}」
                     </p>
                     <p
                       className="text-sm leading-6"
-                      style={{ color: "var(--veulr-text-secondary)" }}
+                      style={{ color: "var(--veuler-text-secondary)" }}
                     >
                       {card.desc}
                     </p>
@@ -234,23 +234,23 @@ export default function Product() {
         </div>
       </div>
 
-      {/* ── ② Solution Bridge — ダークセクション ── */}
+      {/* ── ② Solution Bridge — ライトアクセントセクション ── */}
       <div
         className="relative py-20 px-6 overflow-hidden"
-        style={{ background: "oklch(0.13 0.04 280)" }}
+        style={{ background: "var(--veuler-section-bg)" }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at top right, oklch(0.55 0.22 280 / 0.2) 0%, transparent 55%), radial-gradient(ellipse at bottom left, oklch(0.5 0.18 260 / 0.15) 0%, transparent 55%)",
+              "radial-gradient(ellipse at top right, var(--veuler-accent-bg-soft) 0%, transparent 55%)",
           }}
         />
         <FadeIn>
           <div className="relative max-w-2xl mx-auto text-center space-y-5">
             <p
               className="text-xs tracking-[0.25em] uppercase font-medium"
-              style={{ color: "oklch(0.7 0.18 280)" }}
+              style={{ color: "var(--veuler-accent-primary)" }}
             >
               Solution
             </p>
@@ -258,7 +258,7 @@ export default function Product() {
               className="font-bold leading-tight"
               style={{
                 fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
-                color: "oklch(0.97 0 0)",
+                color: "var(--veuler-text-primary)",
               }}
             >
               ファイルをアップするだけ。
@@ -267,7 +267,7 @@ export default function Product() {
             </h3>
             <p
               className="text-base leading-8"
-              style={{ color: "oklch(0.75 0.02 270)" }}
+              style={{ color: "var(--veuler-text-secondary)" }}
             >
               社内のマニュアル・規程・申請書をアップロードするだけで、
               Document Finder が自動学習。社員からの質問に即座に回答します。
@@ -276,16 +276,16 @@ export default function Product() {
         </FadeIn>
       </div>
 
-      {/* ── ③ 製品ショーケース — ダークセクション ── */}
+      {/* ── ③ 製品ショーケース — ライトセクション ── */}
       <div
         className="relative py-24 px-6 lg:px-16 overflow-hidden"
-        style={{ background: "oklch(0.09 0.02 280)" }}
+        style={{ background: "var(--veuler-surface-0)" }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at top center, oklch(0.55 0.22 280 / 0.1) 0%, transparent 60%)",
+              "radial-gradient(ellipse at top center, var(--veuler-accent-bg-soft) 0%, transparent 60%)",
           }}
         />
         <div className="relative max-w-5xl mx-auto">
@@ -293,13 +293,13 @@ export default function Product() {
             <div className="text-center mb-10">
               <p
                 className="text-[10px] tracking-[0.3em] uppercase font-medium mb-3"
-                style={{ color: "oklch(0.65 0.22 280)" }}
+                style={{ color: "var(--veuler-accent-primary)" }}
               >
                 Actual Screen
               </p>
               <p
                 className="text-sm"
-                style={{ color: "oklch(0.55 0.03 270)" }}
+                style={{ color: "var(--veuler-text-muted)" }}
               >
                 実際の画面
               </p>
@@ -316,10 +316,10 @@ export default function Product() {
         </div>
       </div>
 
-      {/* ── ④ 機能紹介 左右交互 — ダークセクション ── */}
+      {/* ── ④ 機能紹介 左右交互 — ライトセクション ── */}
       <div
         className="relative overflow-hidden"
-        style={{ background: "oklch(0.09 0.02 280)" }}
+        style={{ background: "var(--veuler-surface-0)" }}
       >
         {/* Row 1 — テキスト左・画像右 */}
         <div className="py-24 px-6 lg:px-16">
@@ -329,7 +329,7 @@ export default function Product() {
               <div className="space-y-6">
                 <p
                   className="text-[10px] tracking-[0.3em] uppercase font-semibold"
-                  style={{ color: "oklch(0.65 0.22 280)" }}
+                  style={{ color: "var(--veuler-accent-primary)" }}
                 >
                   Feature 01
                 </p>
@@ -337,14 +337,14 @@ export default function Product() {
                   className="font-bold leading-snug"
                   style={{
                     fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)",
-                    color: "oklch(0.97 0 0)",
+                    color: "var(--veuler-text-primary)",
                   }}
                 >
                   そのまま聞ける
                 </h3>
                 <p
                   className="text-base leading-8"
-                  style={{ color: "oklch(0.70 0.02 270)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
                   「退職時のPC返却は？」キーワードを覚える必要なし。
                   日常の言葉でそのまま質問できます。
@@ -355,15 +355,15 @@ export default function Product() {
                       <span
                         className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                         style={{
-                          background: "oklch(0.55 0.22 280 / 0.18)",
-                          border: "1px solid oklch(0.55 0.22 280 / 0.3)",
+                          background: "var(--veuler-accent-bg-soft)",
+                          border: "1px solid var(--veuler-accent-border-soft)",
                         }}
                       >
-                        <Check size={11} style={{ color: "oklch(0.65 0.22 280)" }} />
+                        <Check size={11} style={{ color: "var(--veuler-accent-primary)" }} />
                       </span>
                       <span
                         className="text-sm"
-                        style={{ color: "oklch(0.80 0.02 270)" }}
+                        style={{ color: "var(--veuler-text-secondary)" }}
                       >
                         {item}
                       </span>
@@ -386,12 +386,8 @@ export default function Product() {
 
         {/* 区切り */}
         <div
-          className="mx-6 lg:mx-16 max-w-6xl"
-          style={{
-            borderTop: "1px solid oklch(0.20 0.03 280)",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
+          className="max-w-6xl mx-6 lg:mx-auto"
+          style={{ borderTop: "1px solid var(--veuler-section-border)" }}
         />
 
         {/* Row 2 — 画像左・テキスト右 */}
@@ -411,7 +407,7 @@ export default function Product() {
               <div className="space-y-6">
                 <p
                   className="text-[10px] tracking-[0.3em] uppercase font-semibold"
-                  style={{ color: "oklch(0.65 0.22 280)" }}
+                  style={{ color: "var(--veuler-accent-primary)" }}
                 >
                   Feature 02
                 </p>
@@ -419,14 +415,14 @@ export default function Product() {
                   className="font-bold leading-snug"
                   style={{
                     fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)",
-                    color: "oklch(0.97 0 0)",
+                    color: "var(--veuler-text-primary)",
                   }}
                 >
                   ファイルを追加するだけ
                 </h3>
                 <p
                   className="text-base leading-8"
-                  style={{ color: "oklch(0.70 0.02 270)" }}
+                  style={{ color: "var(--veuler-text-secondary)" }}
                 >
                   マニュアル・規程・申請書を書庫にアップするだけ。
                   AIが自動で学習し、即座に回答できるようになります。
@@ -437,15 +433,15 @@ export default function Product() {
                       <span
                         className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                         style={{
-                          background: "oklch(0.55 0.22 280 / 0.18)",
-                          border: "1px solid oklch(0.55 0.22 280 / 0.3)",
+                          background: "var(--veuler-accent-bg-soft)",
+                          border: "1px solid var(--veuler-accent-border-soft)",
                         }}
                       >
-                        <Check size={11} style={{ color: "oklch(0.65 0.22 280)" }} />
+                        <Check size={11} style={{ color: "var(--veuler-accent-primary)" }} />
                       </span>
                       <span
                         className="text-sm"
-                        style={{ color: "oklch(0.80 0.02 270)" }}
+                        style={{ color: "var(--veuler-text-secondary)" }}
                       >
                         {item}
                       </span>
@@ -458,24 +454,16 @@ export default function Product() {
         </div>
       </div>
 
-      {/* ── ⑤ Features 3カード — ダークセクション ── */}
+      {/* ── ⑤ Features 3カード — ライトセクション ── */}
       <div
         className="relative py-16 px-6 lg:px-16 overflow-hidden"
-        style={{ background: "oklch(0.11 0.03 280)" }}
+        style={{ background: "var(--veuler-section-bg)" }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at top right, oklch(0.55 0.22 280 / 0.15) 0%, transparent 50%)",
-          }}
-        />
-
         <div className="relative max-w-6xl mx-auto">
           <FadeIn>
             <p
               className="text-xs tracking-[0.25em] uppercase font-medium mb-10 text-center"
-              style={{ color: "oklch(0.7 0.18 280)" }}
+              style={{ color: "var(--veuler-accent-primary)" }}
             >
               Features
             </p>
@@ -487,21 +475,21 @@ export default function Product() {
                 <div
                   className="group relative rounded-2xl p-7 transition-all duration-300 cursor-default"
                   style={{
-                    background: "oklch(0.18 0.03 280 / 0.6)",
-                    border: "1px solid oklch(0.35 0.05 280)",
+                    background: "var(--veuler-surface-0)",
+                    border: "1px solid var(--veuler-section-border)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "oklch(0.55 0.22 280 / 0.5)";
-                    e.currentTarget.style.background = "oklch(0.20 0.04 280 / 0.8)";
+                    e.currentTarget.style.borderColor = "var(--veuler-accent-border-soft)";
+                    e.currentTarget.style.background = "var(--veuler-surface-1)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "oklch(0.35 0.05 280)";
-                    e.currentTarget.style.background = "oklch(0.18 0.03 280 / 0.6)";
+                    e.currentTarget.style.borderColor = "var(--veuler-section-border)";
+                    e.currentTarget.style.background = "var(--veuler-surface-0)";
                   }}
                 >
                   <span
                     className="absolute -top-2 -right-1 font-black select-none pointer-events-none"
-                    style={{ fontSize: "5rem", color: "oklch(1 0 0 / 0.03)", lineHeight: 1 }}
+                    style={{ fontSize: "5rem", color: "oklch(0 0 0 / 0.04)", lineHeight: 1 }}
                   >
                     {feat.num}
                   </span>
@@ -509,23 +497,22 @@ export default function Product() {
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center mb-5"
                     style={{
-                      background:
-                        "linear-gradient(135deg, oklch(0.55 0.22 280 / 0.25), oklch(0.5 0.18 260 / 0.15))",
-                      border: "1px solid oklch(0.55 0.22 280 / 0.3)",
+                      background: "var(--veuler-accent-bg-soft)",
+                      border: "1px solid var(--veuler-accent-border-soft)",
                     }}
                   >
-                    <feat.icon size={16} style={{ color: "oklch(0.75 0.18 280)" }} />
+                    <feat.icon size={16} style={{ color: "var(--veuler-accent-primary)" }} />
                   </div>
 
                   <p
                     className="font-bold text-sm mb-2"
-                    style={{ color: "oklch(0.95 0 0)" }}
+                    style={{ color: "var(--veuler-text-primary)" }}
                   >
                     {feat.title}
                   </p>
                   <p
                     className="text-xs leading-6"
-                    style={{ color: "oklch(0.65 0.02 270)" }}
+                    style={{ color: "var(--veuler-text-secondary)" }}
                   >
                     {feat.desc}
                   </p>
@@ -536,24 +523,24 @@ export default function Product() {
         </div>
       </div>
 
-      {/* ── ⑥ CTA — ダークセクション ── */}
+      {/* ── ⑥ CTA — ライトアクセントセクション ── */}
       <div
         className="relative py-16 px-6 lg:px-16"
-        style={{ background: "oklch(0.11 0.03 280)" }}
+        style={{ background: "var(--veuler-surface-0)" }}
       >
         <FadeIn>
           <div
             className="max-w-2xl mx-auto rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
             style={{
-              background: "oklch(0.55 0.22 280 / 0.12)",
-              border: "1px solid oklch(0.55 0.22 280 / 0.25)",
+              background: "var(--veuler-accent-bg-soft)",
+              border: "1px solid var(--veuler-accent-border-soft)",
             }}
           >
             <div>
-              <p className="font-bold text-xl" style={{ color: "oklch(0.95 0 0)" }}>
+              <p className="font-bold text-xl" style={{ color: "var(--veuler-text-primary)" }}>
                 まずは無料で試す
               </p>
-              <p className="text-sm mt-1" style={{ color: "oklch(0.65 0.02 270)" }}>
+              <p className="text-sm mt-1" style={{ color: "var(--veuler-text-secondary)" }}>
                 クレジットカード不要。14日間の無料トライアル。
               </p>
             </div>
@@ -564,7 +551,7 @@ export default function Product() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 h-10 px-6 rounded-xl text-sm font-bold transition-opacity hover:opacity-85"
                 style={{
-                  background: "var(--veulr-accent-primary)",
+                  background: "var(--veuler-accent-primary)",
                   color: "oklch(0.97 0 0)",
                 }}
               >
@@ -574,10 +561,11 @@ export default function Product() {
                 href="https://documentfinder.jp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center h-10 px-6 rounded-xl text-sm font-medium transition-colors hover:bg-white/10"
+                className="inline-flex items-center h-10 px-6 rounded-xl text-sm font-medium transition-colors"
                 style={{
-                  border: "1px solid oklch(0.55 0.22 280 / 0.4)",
-                  color: "oklch(0.8 0.05 280)",
+                  border: "1px solid var(--veuler-surface-border)",
+                  color: "var(--veuler-text-primary)",
+                  background: "var(--veuler-surface-0)",
                 }}
               >
                 資料ダウンロード
