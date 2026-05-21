@@ -1,6 +1,7 @@
 import Header from "@/components/lp/Header";
 import Hero from "@/components/lp/Hero";
 import Problem from "@/components/lp/Problem";
+import Products from "@/components/lp/Products";
 import Product from "@/components/lp/Product";
 import HowItWorks from "@/components/lp/HowItWorks";
 import AboutHeader from "@/components/lp/AboutHeader";
@@ -18,6 +19,7 @@ export default function HomePage() {
         {/* ── プロダクト ── */}
         <Hero />
         <Problem />
+        <Products />
         <Product />
         <HowItWorks />
 

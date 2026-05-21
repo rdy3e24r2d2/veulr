@@ -100,6 +100,13 @@
   --veuler-cook:    oklch(0.50 0.16 50);
   --veuler-ruth:    oklch(0.48 0.18 10);
   --veuler-victor:  oklch(0.38 0.12 220);
+  --veuler-emma:    oklch(0.68 0.14 340);
+
+  /* Product-specific accent tokens */
+  --veuler-ai-oya:             oklch(0.50 0.18 160);
+  --veuler-ai-oya-bg-soft:     oklch(0.50 0.18 160 / 10%);
+  --veuler-ai-oya-border-soft: oklch(0.50 0.18 160 / 25%);
+  --veuler-ai-oya-text:        oklch(0.42 0.18 160);
 
   --veuler-text-on-image: oklch(0.98 0 0);
   --veuler-overlay-image: oklch(0 0 0 / 50%);

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { label: "ミッション", href: "#mission" },
-  { label: "プロダクト", href: "#product" },
+  { label: "プロダクト", href: "#products" },
   { label: "バリュー",   href: "#values" },
   { label: "チーム",     href: "#team" },
   { label: "会社情報",   href: "#company" },
